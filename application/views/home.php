@@ -16,7 +16,7 @@
     <section class="content" style="min-height: 600px;">
       <!-- Small boxes (Stat box) -->
       <div class="row">
-        <div class="col-lg-4 col-xs-6">
+        <div class="col-lg-3 col-xs-6">
           <!-- small box -->
 
           <div class="small-box bg-aqua">
@@ -32,7 +32,7 @@
           </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-4 col-xs-6">
+        <div class="col-lg-3 col-xs-6">
 
           <!-- small box -->
 
@@ -49,7 +49,7 @@
           </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-4 col-xs-6">
+        <div class="col-lg-3 col-xs-6">
 
           <!-- small box -->
 
@@ -67,11 +67,28 @@
         </div>
         <!-- ./col -->
         
+        <div class="col-lg-3 col-xs-6">
+
+          <!-- small box -->
+
+          <div class="small-box bg-red">
+            <div class="inner">
+              <h3>4</h3>
+
+              <p>Administrator</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-key"></i>
+            </div>
+            <a href="agenda.php" class="small-box-footer">Lihat <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        
         
       </div>
       <!-- /.row -->
 
-      <div class="row">
         <div class="col-xs-12">
           <div class="box box-success">
             <div class="box-header">
