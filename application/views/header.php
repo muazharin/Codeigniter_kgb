@@ -1,3 +1,4 @@
+<?php date_default_timezone_set('Africa/Lagos'); ?>
 <!DOCTYPE html>
 <html>
 <head>
