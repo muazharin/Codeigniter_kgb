@@ -8,7 +8,7 @@
       </h1>
       <ol class="breadcrumb">
         <button class="btn btn-success"><i class="fa fa-file-excel-o"></i> Export</button>
-        <button class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Data</button>
+        <a href="<?= base_url() ?>gaji/tambah" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Data</a>
       </ol>
     </section>
 

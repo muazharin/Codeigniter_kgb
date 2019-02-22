@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Feb 22, 2019 at 03:54 PM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 7.3.0
+-- Host: localhost:3306
+-- Generation Time: Feb 22, 2019 at 07:11 PM
+-- Server version: 5.7.19
+-- PHP Version: 7.1.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -57,8 +57,10 @@ CREATE TABLE `duk` (
 CREATE TABLE `pegawai` (
   `id_pegawai` int(11) NOT NULL,
   `nip` varchar(100) NOT NULL,
+  `nama` varchar(100) NOT NULL,
   `jenis_kelamin` varchar(100) NOT NULL,
   `tempat_lahir` varchar(100) NOT NULL,
+  `tgl_lahir` date NOT NULL,
   `umur` int(11) NOT NULL,
   `golongan_darah` varchar(5) NOT NULL,
   `agama` varchar(50) NOT NULL,

@@ -3,7 +3,7 @@
 <head>
 	<title>Login Admin</title>
 	<!-- App favicon -->
-    <link rel="shortcut icon" href="<?= base_url();?>assets/admin/assets/images/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="<?= base_url();?>assets/dist/img/icon-pn.png" type="image/x-icon">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -38,7 +38,7 @@
 			<div class="wrap-login100">
 				<div class="login100-form-title" style="background-image: url(<?= base_url();?>assets/admin/images/bg-01.jpg);">
 					<span class="login100-form-title-1">
-						<img src="../konten/LOGO2.png" alt="" style="width: 260PX;">
+						<img src="<?= base_url();?>assets/dist/img/icon-pn.png" alt="" style="width: 120PX;">
 					</span>
 				</div>
 

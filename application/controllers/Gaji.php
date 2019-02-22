@@ -16,4 +16,12 @@ class Gaji extends CI_Controller {
         $this->load->view('gaji');
 		$this->load->view('footer', $data);
 	}
+
+    public function tambah()
+    {
+        $data['sidebar']="#mn3";
+        $this->load->view('header');
+        $this->load->view('tambah-gaji');
+        $this->load->view('footer', $data);
+    }
 }

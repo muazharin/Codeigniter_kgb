@@ -71,6 +71,12 @@
       'autoWidth'   : false
     });
   });
+
+      //Date picker
+  $('#datepicker').datepicker({
+    autoclose: true,
+    format: 'yyyy-mm-dd'
+  })
 </script>
 <!-- <script>
   $(document).ready(function() {

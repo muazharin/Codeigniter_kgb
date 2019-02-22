@@ -38,25 +38,90 @@
                   </div>
 
                   <div class="form-group">
-                    <label class="col-md-2 control-label">Pangkat</label>
+                    <label class="col-md-2 control-label">Jenis Kelamin</label>
+                    <div class="col-md-8">
+                      <select class="form-control" name="jk" required>
+                        <option value="">-- Pilih --</option>
+                        <option value="Laki-laki">Laki-laki</option>
+                        <option value="Perempuan">Perempuan</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-md-2 control-label">Tempat Lahir</label>
                     <div class="col-md-8">
                       <input type="text" class="form-control" required>
                     </div>
                   </div>
 
                   <div class="form-group">
-                    <label class="col-md-2 control-label">Golongan</label>
+                    <label class="col-md-2 control-label">Tanggal Lahir</label>
+                    <div class="col-md-8">
+                      <div class="input-group date">
+                        <div class="input-group-addon">
+                          <i class="fa fa-calendar"></i>
+                        </div>
+                        <input type="text" name="tgl" class="form-control pull-right" id="datepicker" required="">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-md-2 control-label">Umur (Tahun)</label>
+                    <div class="col-md-8">
+                      <input type="number" class="form-control" required>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-md-2 control-label">Golongan Darah</label>
+                    <div class="col-md-8">
+                      <select class="form-control" name="" required>
+                        <option value="">-- Pilih --</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="AB">AB</option>
+                        <option value="O">O</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-md-2 control-label">Agama</label>
                     <div class="col-md-8">
                       <input type="text" class="form-control" required>
                     </div>
                   </div>
 
                   <div class="form-group">
-                    <label class="col-md-2 control-label">Jabatan</label>
+                    <label class="col-md-2 control-label">No. Telepon</label>
                     <div class="col-md-8">
                       <input type="text" class="form-control" required>
                     </div>
                   </div>
+
+                  <div class="form-group">
+                    <label class="col-md-2 control-label">Email</label>
+                    <div class="col-md-8">
+                      <input type="email" class="form-control" required>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-md-2 control-label">Alamat</label>
+                    <div class="col-md-8">
+                      <input type="text" class="form-control" required>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-md-2 control-label">Keterangan</label>
+                    <div class="col-md-8">
+                      <input type="text" class="form-control" required>
+                    </div>
+                  </div>
+
                   <div class="form-group">
                     <div class="col-md-2"></div>
                     <div class="col-md-8">
