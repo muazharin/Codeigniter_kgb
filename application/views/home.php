@@ -1,4 +1,5 @@
-<!-- Content Wrapper. Contains page content -->
+
+  <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -66,7 +67,7 @@
           </div>
         </div>
         <!-- ./col -->
-        
+
         <div class="col-lg-3 col-xs-6">
 
           <!-- small box -->
@@ -89,6 +90,7 @@
       </div>
       <!-- /.row -->
 
+      <div class="row">
         <div class="col-xs-12">
           <div class="box box-success">
             <div class="box-header">
@@ -231,5 +233,3 @@
     </section>
     <!-- /.content -->
 </div>
-
-
