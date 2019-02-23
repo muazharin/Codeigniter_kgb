@@ -15,6 +15,16 @@
 
     <!-- Main content -->
     <section class="content" style="margin-top: 10px;">
+      <div class="row mt-3">
+        <div class="col-xs-12">
+            <?php if($this->session->flashdata('pegawai')):?>
+                <div class="alert alert-success alert-dismissible" role="alert">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  Data pegawai <strong>berhasil</strong> <?= $this->session->flashdata('pegawai');?>
+                </div>
+            <?php endif;?>
+        </div>
+      </div>
       <div class="row">
         <div class="col-xs-12">
           <div class="box box-success">
@@ -29,57 +39,32 @@
                   <th width="10">#</th>
                   <th>NIP</th>
                   <th>Nama</th>
-                  <th>Pangkat/Golongan</th>
-                  <th>TMT</th>
-                  <th>Jabatan</th>
-                  <th>TMT</th>
+                  <th>Jenis Kelamin</th>
+                  <th>Tempat Lahir</th>
+                  <th>Tanggal Lahir</th>
+                  <th>Email</th>
                   <th class="text-center" width="90">Menu</th>
                 </tr>
                 </thead>
                 <tbody>
-                
+                  <?php $i=1;?>
+                  <?php foreach($pegawai as $pgw):?>
                   <tr>
-                    <td>1</td>
-                    <td>NIP. 19751206 200112 1 001</td>
-                    <td>Cassandra</td>
-                    <td>Pembina Utama Muda (IV/c)</td>
-                    <td>01-04-2017</td>
-                    <td>Wakil Ketua</td>
-                    <td>28-09-2018</td>
+                    <td><?= $i;?></td>
+                    <td><?= $pgw['nip'];?></td>
+                    <td><?= $pgw['nama'];?></td>
+                    <td><?= $pgw['jenis_kelamin'];?></td>
+                    <td><?= $pgw['tempat_lahir'];?></td>
+                    <td><?= $pgw['tgl_lahir'];?></td>
+                    <td><?= $pgw['email'];?></td>
                     <td style="text-align: center;">
-                      <a href="profil" class="btn btn-warning"><i class="fa fa-edit"></i></a>
-                      <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                      <a href="<?= base_url();?>pegawai/detailPegawai/<?= $pgw['id_pegawai'];?>" class="btn btn-warning"><i class="fa fa-edit"></i></a>
+                      <a href="<?= base_url();?>pegawai/hapusPegawai/<?= $pgw['id_pegawai'];?>" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                      <!-- <button class="btn btn-danger"><i class="fa fa-trash"></i></button> -->
                     </td>
                   </tr>
-
-                  <tr>
-                    <td>2</td>
-                    <td>NIP. 19610923 198303 1 005</td>
-                    <td>HEBBIN SILALAHI, S.H. M.H</td>
-                    <td>Pembina Utama Muda (IV/c)</td>
-                    <td>01-04-2016</td>
-                    <td>Wakil Ketua</td>
-                    <td>20-12-2017</td>
-                    <td style="text-align: center;">
-                      <button class="btn btn-warning"><i class="fa fa-edit"></i></button>
-                      <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
-                    </td>
-                  </tr>
-
-                   <tr>
-                    <td>3</td>
-                    <td>NIP. 19650807 200003 1 003</td>
-                    <td>ANDI ASMURUF, SH. MH</td>
-                    <td>Pembina (IV/a)</td>
-                    <td>01-10-2015</td>
-                    <td>Hakim Madya Pratama</td>
-                    <td>05-01-2016</td>
-                    <td style="text-align: center;">
-                      <a href="profil.php" class="btn btn-warning"><i class="fa fa-edit"></i></a>
-                      <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
-                    </td>
-                  </tr>
-
+                  <?php $i++;?>
+                  <?php endforeach; ?>
                 </tbody>
               </table>
             </div>
