@@ -31,7 +31,7 @@ class Login extends CI_Controller {
             $this->session->set_userdata($sesdata);
             if($account === 'admin'){
                 redirect('home');
-            }elseif($account === 'client'){
+            }elseif($account === 'pegawai'){
                 redirect('client');
             }else{
                 redirect('login');
