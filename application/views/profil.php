@@ -9,8 +9,8 @@
         </small>
       </h1>
       <ol class="breadcrumb">
-        <button class="btn btn-success"> <i class="fa fa-user"></i> NIP. 19610923 198303 1 005</button>
-        <a href="pegawai" class="btn bg-navy"> <i class="fa fa-angle-double-left"></i> Kembali</a>
+        <button class="btn btn-success"> <i class="fa fa-user"></i> NIP. <?= $pegawai['nip'];?></button>
+        <a href="<?= base_url();?>pegawai" class="btn bg-navy"> <i class="fa fa-angle-double-left"></i> Kembali</a>
       </ol>
     </section>
 
@@ -32,72 +32,193 @@
                       <tr>
                         <td width="100">NIP</td>
                         <td width="7">:</td>
-                        <td>NIP. 19610923 198303 1 005</td>
+                        <td><?= $pegawai['nip'];?></td>
                       </tr>
 
                       <tr>
                         <td>Nama</td>
                         <td>:</td>
-                        <td>HEBBIN SILALAHI, S.H. M.H</td>
+                        <td><?= $pegawai['nama'];?></td>
                       </tr>
 
                       <tr>
-                        <td>Pangkat</td>
+                        <td>Jenis Kelamin</td>
                         <td>:</td>
-                        <td>Pembina Utama Muda</td>
+                        <td><?= $pegawai['jenis_kelamin'];?></td>
                       </tr>
 
                       <tr>
-                        <td>Golongan</td>
+                        <td>Tempat Lahir</td>
                         <td>:</td>
-                        <td>IV/c</td>
+                        <td><?= $pegawai['tempat_lahir'];?></td>
                       </tr>
 
                       <tr>
-                        <td>Jabatan</td>
+                        <td>Tanggal Lahir</td>
                         <td>:</td>
-                        <td>Wakil Ketua</td>
+                        <td><?= $pegawai['tgl_lahir'];?></td>
+                      </tr>
+                      <?php
+                        // tanggal lahir
+                        $tanggal = new DateTime($pegawai['tgl_lahir']);
+                        // tanggal hari ini
+                        $today = new DateTime('today');
+                        // tahun
+                        $y = $today->diff($tanggal)->y;
+                        // bulan
+                        $m = $today->diff($tanggal)->m;
+                        // hari
+                        $d = $today->diff($tanggal)->d;
+                      ?>
+                      <tr>
+                        <td>Umur</td>
+                        <td>:</td>
+                        <td><?= $y . " tahun " . $m . " bulan " . $d . " hari";?></td>
                       </tr>
 
+                      <tr>
+                        <td>Golongan Darah</td>
+                        <td>:</td>
+                        <td><?= $pegawai['golongan_darah'];?></td>
+                      </tr>
+
+                      <tr>
+                        <td>Agama</td>
+                        <td>:</td>
+                        <td><?= $pegawai['agama'];?></td>
+                      </tr>
+
+                      <tr>
+                        <td>No Telp</td>
+                        <td>:</td>
+                        <td><?= $pegawai['no_telp'];?></td>
+                      </tr>
+
+                      <tr>
+                        <td>Email</td>
+                        <td>:</td>
+                        <td><?= $pegawai['email'];?></td>
+                      </tr>
+
+                      <tr>
+                        <td>Alamat</td>
+                        <td>:</td>
+                        <td><?= $pegawai['alamat'];?></td>
+                      </tr>
+
+                      <tr>
+                        <td>Keterangan</td>
+                        <td>:</td>
+                        <td><?= $pegawai['keterangan'];?></td>
+                      </tr>
                     </tbody>
                   </table>
               </div>
               <!-- /.tab-pane -->
               <div class="tab-pane" id="edit">
-                <form class="form-horizontal">
-                  
-                  <div class="form-group">
+                <form class="form-horizontal" method="post" action="">
+                <input type="hidden" value="<?= $pegawai['id_pegawai'];?>" name="id">
+                <div class="form-group">
                     <label class="col-md-2 control-label">NIP</label>
                     <div class="col-md-8">
-                      <input type="text" class="form-control" value="NIP. 19610923 198303 1 005" required>
+                      <input type="text" name="nip" value="<?= $pegawai['nip'];?>" class="form-control" required>
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="col-md-2 control-label">Nama</label>
                     <div class="col-md-8">
-                      <input type="text" class="form-control" value="HEBBIN SILALAHI, S.H. M.H" required>
+                      <input type="text" name="nama" value="<?= $pegawai['nama'];?>" class="form-control" required>
                     </div>
                   </div>
 
                   <div class="form-group">
-                    <label class="col-md-2 control-label">Pangkat</label>
+                    <label class="col-md-2 control-label">Jenis Kelamin</label>
                     <div class="col-md-8">
-                      <input type="text" class="form-control" value="Pembina Utama Muda" required>
+                      <select class="form-control" name="jenis_kelamin" required>
+                        <?php if($pegawai['jenis_kelamin']=='Laki-laki'):?>
+                          <option selected value="Laki-laki">Laki-laki</option>
+                        <?php else :?>
+                          <option selected value="Perempuan">Perempuan</option>
+                        <?php endif;?>
+                      </select>
                     </div>
                   </div>
 
                   <div class="form-group">
-                    <label class="col-md-2 control-label">Golongan</label>
+                    <label class="col-md-2 control-label">Tempat Lahir</label>
                     <div class="col-md-8">
-                      <input type="text" class="form-control" value="IV/c" required>
+                      <input type="text" value="<?= $pegawai['tempat_lahir'];?>" name="tempat_lahir" class="form-control" required>
                     </div>
                   </div>
 
                   <div class="form-group">
-                    <label class="col-md-2 control-label">Jabatan</label>
+                    <label class="col-md-2 control-label">Tanggal Lahir</label>
                     <div class="col-md-8">
-                      <input type="text" class="form-control" value="Wakil Ketua" required>
+                      <div class="input-group date">
+                        <div class="input-group-addon">
+                          <i class="fa fa-calendar"></i>
+                        </div>
+                        <input type="text" value="<?= $pegawai['tgl_lahir'];?>" name="tgl_lahir" class="form-control pull-right" id="datepicker" required="">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-md-2 control-label">Golongan Darah</label>
+                    <div class="col-md-8">
+                      <select class="form-control" name="gol_darah" required>
+                        <?php foreach($gol_darah as $gd):?>
+                          <?php if($gd == $pegawai['golongan_darah'] ):?>
+                            <option value="<?= $gd;?>" selected><?= $gd;?></option>
+                          <?php else :?>
+                            <option value="<?= $gd;?>"><?= $gd;?></option>
+                          <?php endif;?>
+                        <?php endforeach;?>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-md-2 control-label">Agama</label>
+                    <div class="col-md-8">
+                      <select class="form-control" name="agama" required>
+                        <?php foreach($agama as $a):?>
+                          <?php if($a == $pegawai['agama'] ):?>
+                            <option value="<?= $a;?>" selected><?= $a;?></option>
+                          <?php else :?>
+                            <option value="<?= $a;?>"><?= $a;?></option>
+                          <?php endif;?>
+                        <?php endforeach;?>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-md-2 control-label">No. Telepon</label>
+                    <div class="col-md-8">
+                      <input type="text" name="no_telp" value="<?= $pegawai['no_telp'];?>" class="form-control" required>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-md-2 control-label">Email</label>
+                    <div class="col-md-8">
+                      <input type="email" name="email" value="<?= $pegawai['email'];?>" class="form-control" required>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-md-2 control-label">Alamat</label>
+                    <div class="col-md-8">
+                      <input type="text" name="alamat" value="<?= $pegawai['alamat'];?>" class="form-control" required>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-md-2 control-label">Keterangan</label>
+                    <div class="col-md-8">
+                      <input type="text" name="ket" value="<?= $pegawai['keterangan'];?>" class="form-control" required>
                     </div>
                   </div>
                   <div class="form-group">
