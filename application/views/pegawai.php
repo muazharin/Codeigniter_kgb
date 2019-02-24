@@ -59,7 +59,7 @@
                     <td><?= $pgw['email'];?></td>
                     <td style="text-align: center;">
                       <a href="<?= base_url();?>pegawai/detailPegawai/<?= $pgw['id_pegawai'];?>" class="btn btn-warning"><i class="fa fa-edit"></i></a>
-                      <a href="<?= base_url();?>pegawai/hapusPegawai/<?= $pgw['id_pegawai'];?>" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                      <a href="<?= base_url();?>pegawai/hapusPegawai/<?= $pgw['nip'];?>" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                       <!-- <button class="btn btn-danger"><i class="fa fa-trash"></i></button> -->
                     </td>
                   </tr>
