@@ -21,26 +21,25 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <form class="form-horizontal">
-                  
+              <form class="form-horizontal" method="post" action="">
                   <div class="form-group">
                     <label class="col-md-2 control-label">Golongan</label>
                     <div class="col-md-8">
-                      <input type="text" class="form-control" required>
+                      <input type="text" name="gol" class="form-control" required>
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="col-md-2 control-label">Masa Kerja</label>
                     <div class="col-md-8">
-                      <input type="text" class="form-control" required>
+                      <input type="text" name="masa_kerja" class="form-control" required>
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="col-md-2 control-label">Gaji Pokok</label>
                     <div class="col-md-8">
-                      <input type="number" class="form-control" required>
+                      <input type="number" name="gaji_pokok" class="form-control" required>
                     </div>
                   </div>
 
