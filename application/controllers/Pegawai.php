@@ -73,10 +73,22 @@ class Pegawai extends CI_Controller {
 		}
 	}
 
-	public function hapusPegawai($id){
-		$this->M_pegawai->hapusDataPegawai($id);
+	public function hapusPegawai($nip){
+		$this->M_pegawai->hapusDataPegawai($nip);
 		$this->session->set_flashdata('pegawai', 'Dihapus');
 		redirect('pegawai');
+	}
+
+	public function resetPassword(){
+		$this->form_validation->set_rules('nip', 'NIP', 'required|xss_clean|numeric');
+		if($this->form_validation->run()==FALSE){
+			//redirect('pegawai',refresh);
+			echo "gagal!";
+		}else{
+			$this->M_pegawai->resetPass();
+			$this->session->set_flashdata('pegawai', 'Direset');
+			redirect('pegawai');
+		}
 	}
 	
 }
