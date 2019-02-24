@@ -231,10 +231,12 @@
               </div>
               <!-- /.tab-pane -->
               <div class="tab-pane" id="pengaturan">
-                <form>
+                <form method="post" action="<?= base_url();?>pegawai/resetPassword">
                   <div class="form-group">
-                    <label>Reset Password</label><br>
-                    <button class="btn btn-success"><i class="fa fa-key"></i> Reset</button>
+                    <label>Reset Password</label>
+                    <input type="hidden" value="<?= $pegawai['nip']?>" name="nip">
+                    <br>
+                    <button class="btn btn-success" type="submit"><i class="fa fa-key"></i> Reset</button>
                     <span class="help-block">Reset Password menjadi NIP pegawai</span>
                   </div>
                 </form>
