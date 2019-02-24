@@ -40,13 +40,12 @@ class M_Pegawai extends CI_Model {
 
     }
 
-    public function hapusDataPegawai($id){
-        $idu=$id+1;
-        $this->db->where('id_pegawai', $id);
+    public function hapusDataPegawai($nip){
+        $this->db->where('nip', $nip);
         $this->db->delete('pegawai');
-        $this->db->where('id', $idu);
+        $this->db->where('username', $nip);
         $this->db->delete('user');
-        $this->db->where('id_duk', $id);
+        $this->db->where('nip', $nip);
         $this->db->delete('duk');
     }
 
@@ -82,11 +81,20 @@ class M_Pegawai extends CI_Model {
 
         $dataUser = [
             'username'=>$this->input->post('nip',true),
-            'password'=>md5($this->input->post('nama',true)),
+            'password'=>md5($this->input->post('nip',true)),
             'account' => 'pegawai'
         ];
         $this->db->where('id',$this->input->post('id')+1);
         $this->db->insert('user',$dataUser);
 
+    }
+
+    public function resetPass(){
+        $data=[
+            'username'=>$this->input->post('nip',true),
+            'password'=>md5($this->input->post('nip',true))
+        ];
+        $this->db->where('username',$this->input->post('nip',true));
+        $this->db->update('user', $data);
     }
 }
