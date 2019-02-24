@@ -14,6 +14,16 @@
 
     <!-- Main content -->
     <section class="content" style="margin-top: 10px;">
+      <div class="row mt-3">
+        <div class="col-xs-12">
+            <?php if($this->session->flashdata('gaji')):?>
+                <div class="alert alert-success alert-dismissible" role="alert">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  Data gaji pegawai <strong>berhasil</strong> <?= $this->session->flashdata('gaji');?>
+                </div>
+            <?php endif;?>
+        </div>
+      </div>
       <div class="row">
         <div class="col-xs-12">
           <div class="box box-success">
@@ -32,15 +42,17 @@
                 </tr>
                 </thead>
                 <tbody>
+                  <?php foreach ($gaji as $g):?>
                   <tr>
-                    <td>1A00</td>
-                    <td>Masa Kerja 00</td>
-                    <td>Rp. 1.486.500</td>
+                    <td><?= $g['golongan'];?></td>
+                    <td><?= $g['masa_kerja'];?></td>
+                    <td><?= $g['gaji_pokok'];?></td>
                     <td style="text-align: center;">
-                      <button class="btn btn-warning"><i class="fa fa-edit"></i></button>
-                      <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                      <a href="<?= base_url();?>gaji/detailDataGaji/<?= $g['id_golongan'];?>" class="btn btn-warning"><i class="fa fa-edit"></i></a>
+                      <a href="<?= base_url();?>gaji/hapusDataGaji/<?= $g['id_golongan'];?>" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                     </td>
                   </tr>
+                  <?php endforeach;?>
                 </tbody>
               </table>
             </div>
