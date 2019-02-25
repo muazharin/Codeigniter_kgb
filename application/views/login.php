@@ -36,7 +36,7 @@
 <div id="particles-js" style="position: absolute ;z-index: 0; width: 100%;"></div>
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<div class="login100-form-title" style="background-image: url(<?= base_url();?>assets/admin/images/bg-01.jpg);">
+				<div class="login100-form-title" style="background-image: url(<?= base_url();?>assets/admin/images/bg-01.png);">
 					<span class="login100-form-title-1">
 						<img src="<?= base_url();?>assets/dist/img/icon-pn.png" alt="" style="width: 120PX;">
 					</span>
