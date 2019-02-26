@@ -56,7 +56,7 @@
                       <tr>
                         <td>Tanggal Lahir</td>
                         <td>:</td>
-                        <td><?= $pegawai['tgl_lahir'];?></td>
+                        <td><?= date_indo($pegawai['tgl_lahir']);?></td>
                       </tr>
                       <?php
                         // tanggal lahir
@@ -118,6 +118,7 @@
               <div class="tab-pane" id="edit">
                 <form class="form-horizontal" method="post" action="">
                 <input type="hidden" value="<?= $pegawai['id_pegawai'];?>" name="id">
+                <input type="hidden" value="<?= $pegawai['nip'];?>" name="nip1">
                 <div class="form-group">
                     <label class="col-md-2 control-label">NIP</label>
                     <div class="col-md-8">
@@ -136,11 +137,13 @@
                     <label class="col-md-2 control-label">Jenis Kelamin</label>
                     <div class="col-md-8">
                       <select class="form-control" name="jenis_kelamin" required>
-                        <?php if($pegawai['jenis_kelamin']=='Laki-laki'):?>
-                          <option selected value="Laki-laki">Laki-laki</option>
-                        <?php else :?>
-                          <option selected value="Perempuan">Perempuan</option>
-                        <?php endif;?>
+                        <?php foreach($jk as $j):?>
+                          <?php if($j == $pegawai['jenis_kelamin'] ):?>
+                            <option value="<?= $j;?>" selected><?= $j;?></option>
+                          <?php else :?>
+                            <option value="<?= $j;?>"><?= $j;?></option>
+                          <?php endif;?>
+                        <?php endforeach;?>
                       </select>
                     </div>
                   </div>
