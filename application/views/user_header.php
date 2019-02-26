@@ -65,7 +65,7 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="#" class="logo" target="_blank">
+    <a href="#" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><img src="<?= base_url();?>assets/dist/img/icon-pn.png" style="width: 60%;"></span>
       <!-- logo for regular state and mobile devices -->
@@ -86,7 +86,7 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="<?= base_url();?>assets/dist/img/pria.jpg" class="user-image" alt=".">
-              <span class="hidden-xs">Pegawai 1</span>
+              <span class="hidden-xs"><?= $client['nama'];?></span>
             </a>
             <ul class="dropdown-menu">
 
@@ -95,8 +95,8 @@
                 <img src="<?= base_url();?>assets/dist/img/pria.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  Pegawai 1
-                  <small>Pegawai@pengadilan.go.id</small>
+                  <?= $client['nama'];?>
+                  <small><?= $client['nip'];?></small>
                   
                 </p>
               </li>
@@ -127,7 +127,7 @@
           <img src="<?= base_url();?>assets/dist/img/pria.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Pegawai 1</p>
+          <p><?= $client['nip'];?></p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
