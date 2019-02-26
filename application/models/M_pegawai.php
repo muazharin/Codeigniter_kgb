@@ -33,7 +33,7 @@ class M_Pegawai extends CI_Model {
 
         $dataUser = [
             'username'=>$this->input->post('nip',true),
-            'password'=>md5($this->input->post('nama',true)),
+            'password'=>md5($this->input->post('nip',true)),
             'account' => 'pegawai'
         ];
         $this->db->insert('user',$dataUser);
