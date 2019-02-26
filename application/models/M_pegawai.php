@@ -84,8 +84,8 @@ class M_Pegawai extends CI_Model {
             'password'=>md5($this->input->post('nip',true)),
             'account' => 'pegawai'
         ];
-        $this->db->where('id',$this->input->post('id')+1);
-        $this->db->insert('user',$dataUser);
+        $this->db->where('username',$this->input->post('nip1'));
+        $this->db->update('user',$dataUser);
 
     }
 
