@@ -46,7 +46,7 @@
                   <tr>
                     <td><?= $g['golongan'];?></td>
                     <td><?= $g['masa_kerja'];?></td>
-                    <td><?= $g['gaji_pokok'];?></td>
+                    <td>Rp <?= nominal($g['gaji_pokok']);?></td>
                     <td style="text-align: center;">
                       <a href="<?= base_url();?>gaji/detailDataGaji/<?= $g['id_golongan'];?>" class="btn btn-warning"><i class="fa fa-edit"></i></a>
                       <a href="<?= base_url();?>gaji/hapusDataGaji/<?= $g['id_golongan'];?>" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');" class="btn btn-danger"><i class="fa fa-trash"></i></a>
