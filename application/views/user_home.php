@@ -23,8 +23,8 @@
           <div class="box box-widget widget-user">
             <!-- Add the bg color to the header using any of the bg-* classes -->
             <div class="widget-user-header bg-aqua-active">
-              <h3 class="widget-user-username" style="margin-top: -15px;">Pegawai 1</h3>
-              <h5 class="widget-user-desc">Nip. 62153421 1238 3721</h5>
+              <h3 class="widget-user-username" style="margin-top: -15px;"><?= $client['nama'];?></h3>
+              <h5 class="widget-user-desc">Nip. <?= $client['nip'];?></h5>
             </div>
             <div class="widget-user-image">
               <img class="img-circle" src="<?= base_url() ?>assets/dist/img/pria.jpg" alt="User Avatar">
@@ -34,7 +34,7 @@
                 <div class="col-sm-4 border-right">
                   <div class="description-block">
                     <span class="description-text">Pangkat</span>
-                    <h5 class="description-header">Penata Muda I</h5>
+                    <h5 class="description-header"><?= $client['pangkat'];?></h5>
                   </div>
                   <!-- /.description-block -->
                 </div>
@@ -42,7 +42,7 @@
                 <div class="col-sm-4 border-right">
                   <div class="description-block">
                     <span class="description-text">Golongan</span>
-                    <h5 class="description-header">IVA</h5>
+                    <h5 class="description-header"><?= $client['golongan'];?></h5>
                   </div>
                   <!-- /.description-block -->
                 </div>
@@ -50,7 +50,7 @@
                 <div class="col-sm-4">
                   <div class="description-block">
                     <h5 class="description-header">Gaji</h5>
-                    <span class="description-text">Rp. 3.500.000,00</span>
+                    <span class="description-text">Rp. 4.713.800,00</span>
                   </div>
                   <!-- /.description-block -->
                 </div>
