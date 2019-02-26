@@ -9,6 +9,7 @@ class Gaji extends CI_Controller {
             redirect('login');
         }
         $this->load->model('M_gaji');
+        $this->load->helper('nominal');
     }
 	public function index()
 	{
