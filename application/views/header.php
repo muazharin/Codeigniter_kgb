@@ -31,7 +31,7 @@
   <link rel="stylesheet" href="<?= base_url();?>assets/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
 
   <!-- Google Font -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"> -->
 
   <style type="text/css">
 .preloader {
@@ -104,7 +104,7 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="setting.php" class="btn btn-default btn-flat">Pengaturan</a>
+                  <a href="<?= base_url() ?>pegawai/setting" class="btn btn-default btn-flat">Pengaturan</a>
                 </div>
                 <div class="pull-right">
                   <a href="<?= base_url();?>login/logout" onclick="return confirm('Apakah Anda yakin ingin keluar?')" class="btn btn-default btn-flat">Keluar</a>
@@ -156,6 +156,12 @@
         <li id="mn2">
           <a href="<?=base_url();?>pegawai">
             <i class="fa fa-user"></i> <span>Data Pegawai</span>
+          </a>
+        </li>
+
+        <li id="mn4">
+          <a href="<?=base_url();?>pegawai/data_duk">
+            <i class="fa fa-credit-card"></i> <span>Data DUK Pegawai</span>
           </a>
         </li>
 

@@ -92,7 +92,7 @@
 
       <div class="row">
         <div class="col-xs-12">
-          <div class="box box-success">
+          <div class="box box-warning">
             <div class="box-header">
               <h3 class="box-title"><i class="fa fa-sitemap"></i> Pegawai Yang Akan Naik Pangkat Bulan Ini</h3>
             </div>
@@ -122,8 +122,8 @@
                     <td>Wakil Ketua</td>
                     <td>28-09-2018</td>
                     <td style="text-align: center;">
-                      <a href="profil.php" class="btn btn-warning"><i class="fa fa-edit"></i></a>
-                      <!-- <button class="btn btn-danger"><i class="fa fa-trash"></i></button> -->
+                      <a href="<?= base_url() ?>pegawai/duk" class="btn btn-info"><i class="fa fa-eye"></i></a>
+                      <button class="btn btn-warning"><i class="fa fa-file-pdf-o"></i></button>
                     </td>
                   </tr>
 
@@ -136,8 +136,8 @@
                     <td>Wakil Ketua</td>
                     <td>20-12-2017</td>
                     <td style="text-align: center;">
-                      <button class="btn btn-warning"><i class="fa fa-edit"></i></button>
-                      <!-- <button class="btn btn-danger"><i class="fa fa-trash"></i></button> -->
+                      <button class="btn btn-info"><i class="fa fa-eye"></i></button>
+                      <button class="btn btn-warning"><i class="fa fa-file-pdf-o"></i></button>
                     </td>
                   </tr>
 
@@ -150,8 +150,8 @@
                     <td>Hakim Madya Pratama</td>
                     <td>05-01-2016</td>
                     <td style="text-align: center;">
-                      <a href="profil.php" class="btn btn-warning"><i class="fa fa-edit"></i></a>
-                      <!-- <button class="btn btn-danger"><i class="fa fa-trash"></i></button> -->
+                      <a href="<?= base_url() ?>pegawai/duk" class="btn btn-info"><i class="fa fa-eye"></i></a>
+                      <button class="btn btn-warning"><i class="fa fa-file-pdf-o"></i></button>
                     </td>
                   </tr>
 
@@ -198,8 +198,8 @@
                     <td>Wakil Ketua</td>
                     <td>28-09-2018</td>
                     <td style="text-align: center;">
-                      <a href="profil.php" class="btn btn-warning"><i class="fa fa-edit"></i></a>
-                      <!-- <button class="btn btn-danger"><i class="fa fa-trash"></i></button> -->
+                      <a href="<?= base_url() ?>pegawai/duk" class="btn btn-info"><i class="fa fa-eye"></i></a>
+                      <button class="btn btn-warning"><i class="fa fa-file-pdf-o"></i></button>
                     </td>
                   </tr>
 
@@ -213,8 +213,8 @@
                     <td>Hakim Madya Pratama</td>
                     <td>05-01-2016</td>
                     <td style="text-align: center;">
-                      <a href="profil.php" class="btn btn-warning"><i class="fa fa-edit"></i></a>
-                      <!-- <button class="btn btn-danger"><i class="fa fa-trash"></i></button> -->
+                      <a href="<?= base_url() ?>pegawai/duk" class="btn btn-info"><i class="fa fa-eye"></i></a>
+                     <button class="btn btn-warning"><i class="fa fa-file-pdf-o"></i></button>
                     </td>
                   </tr>
 

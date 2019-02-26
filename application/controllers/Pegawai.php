@@ -91,5 +91,26 @@ class Pegawai extends CI_Controller {
 			redirect('pegawai');
 		}
 	}
+
+	public function duk(){
+		$data['sidebar']="#mn4";
+        $this->load->view('header');
+        $this->load->view('duk');
+		$this->load->view('footer', $data);
+	}
+
+	public function data_duk(){
+		$data['sidebar']="#mn4";
+        $this->load->view('header');
+        $this->load->view('data_duk');
+		$this->load->view('footer', $data);
+	}
+
+	public function setting(){
+		$data['sidebar']="";
+        $this->load->view('header');
+        $this->load->view('setting');
+		$this->load->view('footer', $data);
+	}
 	
 }
