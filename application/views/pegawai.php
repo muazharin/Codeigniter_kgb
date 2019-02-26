@@ -55,7 +55,7 @@
                     <td><?= $pgw['nama'];?></td>
                     <td><?= $pgw['jenis_kelamin'];?></td>
                     <td><?= $pgw['tempat_lahir'];?></td>
-                    <td><?= $pgw['tgl_lahir'];?></td>
+                    <td><?= mediumdate_indo($pgw['tgl_lahir']);?></td>
                     <td><?= $pgw['email'];?></td>
                     <td style="text-align: center;">
                       <a href="<?= base_url();?>pegawai/detailPegawai/<?= $pgw['id_pegawai'];?>" class="btn btn-warning"><i class="fa fa-edit"></i></a>
