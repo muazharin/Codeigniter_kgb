@@ -32,7 +32,7 @@ class Login extends CI_Controller {
             if($account === 'admin'){
                 redirect('home');
             }elseif($account === 'pegawai'){
-                redirect('client');
+                redirect('user');
             }else{
                 redirect('login');
             }
