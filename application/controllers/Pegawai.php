@@ -47,6 +47,7 @@ class Pegawai extends CI_Controller {
 	public function detailPegawai($id){
 		$data['pegawai']=$this->M_pegawai->getPegawaiById($id);
 		$data['gol_darah']=['A','B','AB','O'];
+		$data['jk']=['Laki-laki','Perempuan'];
 		$data['agama']=['Islam','Protestan','Katholik','Hindu','Budha'];
 	
 		$this->form_validation->set_rules('nip', 'NIP', 'required|xss_clean|numeric');
