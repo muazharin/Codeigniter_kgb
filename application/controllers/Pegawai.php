@@ -50,7 +50,7 @@ class Pegawai extends CI_Controller {
 		$data['jk']=['Laki-laki','Perempuan'];
 		$data['agama']=['Islam','Protestan','Katholik','Hindu','Budha'];
 	
-		$this->form_validation->set_rules('nip', 'NIP', 'required|xss_clean|numeric');
+		$this->form_validation->set_rules('nip', 'NIP', 'required|xss_clean|numeric|max_length[18]');
 		$this->form_validation->set_rules('nama', 'Nama', 'required|xss_clean');
 		$this->form_validation->set_rules('jenis_kelamin', 'Jenis Kelamin', 'required|xss_clean');
 		$this->form_validation->set_rules('tempat_lahir', 'Tempat Lahir', 'required|xss_clean');
