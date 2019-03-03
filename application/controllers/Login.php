@@ -22,16 +22,23 @@ class Login extends CI_Controller {
             $id = $data['id'];
             $user = $data['username'];
             $account = $data['account'];
-            $sesdata = array(
-                'id' => $id,
-                'username' => $user,
-                'account' => $account,
-                'logged_in' => true
-            );
-            $this->session->set_userdata($sesdata);
             if($account === 'admin'){
+                $sesdata = array(
+                    'id' => $id,
+                    'username' => $user,
+                    'account' => $account,
+                    'logged_in_admin' => TRUE,
+                );
+                $this->session->set_userdata($sesdata);
                 redirect('home');
             }elseif($account === 'pegawai'){
+                $sesdata = array(
+                    'id' => $id,
+                    'username' => $user,
+                    'account' => $account,
+                    'logged_in_user' => TRUE,
+                );
+                $this->session->set_userdata($sesdata);
                 redirect('user');
             }else{
                 redirect('login');
