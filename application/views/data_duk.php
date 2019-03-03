@@ -14,9 +14,14 @@
 
     <!-- Main content -->
     <section class="content" style="margin-top: 10px;">
-      <div class="row mt-3">
+    <div class="row mt-3">
         <div class="col-xs-12">
-           
+            <?php if($this->session->flashdata('duk')):?>
+                <div class="alert alert-success alert-dismissible" role="alert">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  Data duk pegawai <strong>berhasil</strong> <?= $this->session->flashdata('duk');?>
+                </div>
+            <?php endif;?>
         </div>
       </div>
       <div class="row">
@@ -35,41 +40,31 @@
                   <th>Nama</th>
                   <th>Pangkat</th>
                   <th>Golongan</th>
-                  <th>TMT (Pangkat/Golongan)</th>
                   <th>Jabatan</th>
-                  <th>TMT (Jabatan)</th>
-                  <th>Masa Kerja (Golongan)</th>
-                  <th>Masa Kerja (Seluruhnya)</th>
-                  <th width="500">Naik Pangkat (YAD)</th>
-                  <th>Naik Gaji (YAD)</th>
-                  <th>Usia</th>
-                  <th>Pendidikan</th>
-                  <th>Keterangan</th>
-                  <th class="text-center" width="190">Menu</th>
+                  <th>KP Yad</th>
+                  <th>KGB Yad</th>
+                  <th class="text-center" width="70">Menu</th>
                 </tr>
                 </thead>
                 <tbody>
+                  <?php $i = 1;?>
+                  <?php foreach ($duk as $d):?>
                   <tr>
-                    <td>1.</td>
-                    <td>3245345234</td>
-                    <td>ADR</td>
-                    <td>Ninja</td>
-                    <td>Jounin</td>
-                    <td>12-24-2007</td>
-                    <td>Hokage</td>
-                    <td>23-06-2017</td>
-                    <td>10 Tahun 10 Bulan</td>
-                    <td>13 Tahun 1 Bulan</td>
-                    <td>23-06-2017</td>
-                    <td>23-06-2017</td>
-                    <td>21 Tahun</td>
-                    <td>S2</td>
-                    <td>Pro Player</td>
+                    <td><?= $i;?></td>
+                    <td><?= $d['nip'];?></td>
+                    <td><?= $d['nama'];?></td>
+                    <td><?= $d['pangkat'];?></td>
+                    <td><?= $d['golongan'];?></td>
+                    <td><?= $d['jabatan'];?></td>
+                    <td><?= $d['naik_pangkat_yad'];?></td>
+                    <td><?= $d['naik_gaji_yad'];?></td>
                     <td>
-                       <a href="<?= base_url() ?>pegawai/duk" class="btn btn-info"><i class="fa fa-eye"></i></a>
-                      <button class="btn btn-warning"><i class="fa fa-file-pdf-o"></i></button>
+                       <a href="<?= base_url(); ?>duk/data_duk/<?= $d['id_duk']?>" class="btn btn-info"><i class="fa fa-eye"></i></a>
+                       <a href="" class="btn btn-danger"><i class="fa fa-trash-o"></i></a>
                     </td>
                   </tr>
+                  <?php $i++;?>
+                  <?php endforeach;?>
                 </tbody>
               </table>
             </div>
