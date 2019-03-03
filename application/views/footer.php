@@ -47,6 +47,19 @@
 <!-- AdminLTE App -->
 <script src="<?= base_url();?>assets/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
+<script>
+  function myFunction() {
+    var y = document.getElementById("password1");
+    var z = document.getElementById("password2");
+    if (y.type === "password" && z.type === "password" ) {
+      y.type = "text";
+      z.type = "text";
+    } else {
+      y.type = "password";
+      z.type = "password";
+    }
+  }
+</script>
 <script src="<?= base_url();?>assets/dist/js/demo.js"></script>
   <script type="text/javascript">
   $(document).ready(function() {
