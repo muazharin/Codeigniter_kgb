@@ -13,23 +13,19 @@
     </section>
     <!-- Main content -->
     <section class="content">
-
       <div class="row">
-        <div class="col-md-7">
-<?php if ($this->session->flashdata('sukses')) { ?>
-          <div class="alert alert-success alert-dismissible">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-            <h5><i class="icon fa fa-check"></i> Sukses</h5>
-            <?= $this->session->flashdata('sukses'); ?>
-          </div>
-<?php } ?>
-<?php if ($this->session->flashdata('gagal')) { ?>
-          <div class="alert alert-danger alert-dismissible">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-            <h5><i class="icon fa fa-ban"></i> Gagal</h5>
-            <?= $this->session->flashdata('gagal'); ?>
-          </div>
-<?php } ?>
+        <div class="col-md-9">
+          <?php if(validation_errors()):?>
+            <div class="alert alert-danger" role="alert">
+              <?= validation_errors();?>
+            </div>
+          <?php endif;?>
+          <?php if($this->session->flashdata('pegawai')):?>
+              <div class="alert alert-success alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                Password <strong>berhasil</strong> <?= $this->session->flashdata('pegawai');?>
+              </div>
+          <?php endif;?>
           <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
               
@@ -38,22 +34,28 @@
             <div class="tab-content">
             
               <div class="active tab-pane" id="settings">
-                 <form class="form-horizontal" method="POST" action="<?= base_url() ?>admin/gantiPass">
+                 <form class="form-horizontal" method="post" action="">
                   <div class="form-group">
-                    <label class="col-sm-3 control-label">Password Lama</label>
+                    <label class="col-sm-4 control-label">Password Baru</label>
                     <div class="col-sm-8">
-                      <input type="password" class="form-control" name="pl" required>
+                      <input type="password" id="password1" class="form-control" name="pb" required>
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="col-sm-3 control-label">Password Baru</label>
+                    <label class="col-sm-4 control-label">Konfirmasi Password Baru</label>
                     <div class="col-sm-8">
-                      <input type="text" class="form-control" name="pb" required>
+                      <input type="password" id="password2" class="form-control" name="kpb" required>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label"></label>
+                    <div class="col-sm-8">
+                      <input type="checkbox" onclick="myFunction()"> Tampilkan Password
                     </div>
                   </div>
                   
                   <div class="form-group text-right">
-                    <div class="col-sm-offset-2 col-sm-9">
+                    <div class="col-sm-offset-2 col-sm-10">
                       <input type="submit" class="btn btn-success" name="pass" value="Ganti Password">
                     </div>
                   </div>
@@ -66,10 +68,11 @@
           <!-- /.nav-tabs-custom -->
         </div>
         <!-- /.col -->
-      </div>
-      <!-- /.row -->
-
     </section>
+    <!-- <section class="content" style="min-height: 600px;">
+      
+    </section> -->
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+  
