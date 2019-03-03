@@ -16,11 +16,11 @@
 
     <!-- Main content -->
     <section class="content" style="margin-top: 10px;">
-    <?php if(validation_errors()):?>
-              <div class="alert alert-danger" role="alert">
-                <?= validation_errors();?>
-              </div>
-            <?php endif;?>
+      <?php if(validation_errors()):?>
+        <div class="alert alert-danger" role="alert">
+          <?= validation_errors();?>
+        </div>
+      <?php endif;?>
       <div class="row">
         <div class="col-md-12">
           <div class="nav-tabs-custom">
