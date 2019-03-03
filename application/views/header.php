@@ -160,7 +160,7 @@
         </li>
 
         <li id="mn4">
-          <a href="<?=base_url();?>pegawai/data_duk">
+          <a href="<?=base_url();?>duk">
             <i class="fa fa-credit-card"></i> <span>Data DUK Pegawai</span>
           </a>
         </li>
@@ -170,20 +170,6 @@
             <i class="fa fa-server"></i> <span>Referensi Gaji</span>
           </a>
         </li>
-
-        <!-- <li id="mn" class="treeview">
-          <a href="#">
-            <i class="fa fa-pencil"></i>
-            <span>Tulisan</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li id="mn-"><a href="#"><i class="fa fa-circle-o"></i> Berita</a></li>
-            <li id="mn-"><a href="#"><i class="fa fa-circle-o"></i> Informasi</a></li>
-          </ul>
-        </li> -->
 
       </ul>
     </section>
