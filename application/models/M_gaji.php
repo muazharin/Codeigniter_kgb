@@ -9,6 +9,7 @@ class M_Gaji extends CI_Model {
             'gaji_pokok' => $this->input->post('gaji_pokok',true)
         ];
         $this->db->insert('tb_golongan', $data);
+        
     }
 
     public function getAllDataGaji(){
