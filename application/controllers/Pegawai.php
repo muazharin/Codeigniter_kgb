@@ -5,7 +5,7 @@ class Pegawai extends CI_Controller {
 	public function __construct()
     {
         parent::__construct();
-        if($this->session->userdata('logged_in') !== TRUE){
+        if($this->session->userdata('logged_in_admin') !== TRUE){
             redirect('login');
 		}
 		$this->load->model('M_pegawai');
@@ -92,25 +92,19 @@ class Pegawai extends CI_Controller {
 		}
 	}
 
-	public function duk(){
-		$data['sidebar']="#mn4";
-        $this->load->view('header');
-        $this->load->view('duk');
-		$this->load->view('footer', $data);
-	}
-
-	public function data_duk(){
-		$data['sidebar']="#mn4";
-        $this->load->view('header');
-        $this->load->view('data_duk');
-		$this->load->view('footer', $data);
-	}
-
 	public function setting(){
-		$data['sidebar']="";
-        $this->load->view('header');
-        $this->load->view('setting');
-		$this->load->view('footer', $data);
+		$this->form_validation->set_rules('pb','Password Baru','required|xss_clean');
+		$this->form_validation->set_rules('kpb','Konfirmasi Password','required|xss_clean|matches[pb]');
+		if($this->form_validation->run()==FALSE){
+			$data['sidebar']="";
+			$this->load->view('header');
+			$this->load->view('setting',$data);
+			$this->load->view('footer', $data);
+		}else{
+			$this->M_pegawai->ubahPassword();
+			$this->session->set_flashdata('pegawai', 'Diubah');
+			redirect('pegawai/setting');
+		}
 	}
 	
 }
