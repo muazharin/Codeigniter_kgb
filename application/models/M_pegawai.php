@@ -97,4 +97,13 @@ class M_Pegawai extends CI_Model {
         $this->db->where('username',$this->input->post('nip',true));
         $this->db->update('user', $data);
     }
+
+    public function ubahPassword(){
+        $data=[
+            'username' => 'admin',
+            'password' => md5($this->input->post('pb',true))
+        ];
+        $this->db->where('id', 1);
+        $this->db->update('user',$data);
+    }
 }
