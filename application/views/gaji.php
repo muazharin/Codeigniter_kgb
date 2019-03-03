@@ -44,7 +44,7 @@
                 <tbody>
                   <?php foreach ($gaji as $g):?>
                   <tr>
-                    <td><?= $g['golongan'];?></td>
+                    <td><?= word_limiter($g['golongan'], 2);?></td>
                     <td><?= $g['masa_kerja'];?></td>
                     <td>Rp <?= nominal($g['gaji_pokok']);?></td>
                     <td style="text-align: center;">
