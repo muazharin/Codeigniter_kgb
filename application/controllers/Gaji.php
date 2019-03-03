@@ -5,11 +5,12 @@ class Gaji extends CI_Controller {
 	public function __construct()
     {
         parent::__construct();
-        if($this->session->userdata('logged_in') !== TRUE){
+        if($this->session->userdata('logged_in_admin') !== TRUE){
             redirect('login');
         }
         $this->load->model('M_gaji');
         $this->load->helper('nominal');
+        $this->load->helper('text');
     }
 	public function index()
 	{
