@@ -22,7 +22,7 @@
 
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3>111</h3>
+              <h3><?=$tot_pgw;?></h3>
 
               <p>Pegawai</p>
             </div>
@@ -74,9 +74,9 @@
 
           <div class="small-box bg-red">
             <div class="inner">
-              <h3>4</h3>
+              <h3><?= $tot_usr;?></h3>
 
-              <p>Administrator</p>
+              <p>User</p>
             </div>
             <div class="icon">
               <i class="fa fa-key"></i>
