@@ -34,7 +34,7 @@
                   <table class="table table-hover">
                     <tbody>
                       <tr>
-                        <td width="100">NIP</td>
+                        <td width="140">NIP</td>
                         <td width="7">:</td>
                         <td><?= $pegawai['nip'];?></td>
                       </tr>

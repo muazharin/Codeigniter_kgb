@@ -40,6 +40,13 @@ class Gaji extends CI_Controller {
         }
     }
 
+    public function detailDataGaji($id){
+        $data['sidebar']="#mn3";
+        $this->load->view('header');
+        $this->load->view('edit-gaji');
+        $this->load->view('footer', $data);
+    }
+
     public function hapusDataGaji($id){
         $this->M_gaji->hapusGajiPegawai($id);
 		$this->session->set_flashdata('gaji', 'Dihapus');
