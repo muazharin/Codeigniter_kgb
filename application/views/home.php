@@ -29,67 +29,72 @@
             <div class="icon">
               <i class="fa fa-group"></i>
             </div>
-            <a href="info.php" class="small-box-footer">Lihat <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="<?= base_url();?>pegawai" class="small-box-footer">Lihat <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
+          <?php $i=0; $i1=0;?>
+          <?php foreach($duk as $d):?>
+          <?php 
+            $tanggal = new DateTime($d['naik_pangkat_yad']);
+            $tanggal1 = new DateTime($d['naik_gaji_yad']);
+            $today = new DateTime('today');
+            $y = $today->diff($tanggal)->y;
+            $m = $today->diff($tanggal)->m;
+            $y1 = $today->diff($tanggal1)->y;
+            $m1 = $today->diff($tanggal1)->m;
+          ?>
+            <?php if($y==0&&$m==0):?>
+              <?php $i++;?>
+            <?php endif;?>
+            <?php if($y1==0&&$m1==0):?>
+              <?php $i1++;?>
+            <?php endif;?>
+          <?php endforeach;?>
         <div class="col-lg-3 col-xs-6">
-
           <!-- small box -->
-
           <div class="small-box bg-green">
             <div class="inner">
-              <h3>100</h3>
-
+              <h3><?= $i;?></h3>
               <p>Naik Pangkat Bulan Ini</p>
             </div>
             <div class="icon">
               <i class="fa fa-sitemap"></i>
             </div>
-            <a href="berita.php" class="small-box-footer">Lihat <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="" class="small-box-footer">Lihat <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
         <div class="col-lg-3 col-xs-6">
-
           <!-- small box -->
-
           <div class="small-box bg-yellow">
             <div class="inner">
-              <h3>12</h3>
-
+              <h3><?= $i1;?></h3>
               <p>Naik Gaji Bulan Ini</p>
             </div>
             <div class="icon">
               <i class="fa fa-calendar-check-o"></i>
             </div>
-            <a href="agenda.php" class="small-box-footer">Lihat <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="" class="small-box-footer">Lihat <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
-
         <div class="col-lg-3 col-xs-6">
-
           <!-- small box -->
-
           <div class="small-box bg-red">
             <div class="inner">
               <h3><?= $tot_usr;?></h3>
-
               <p>User</p>
             </div>
             <div class="icon">
               <i class="fa fa-key"></i>
             </div>
-            <a href="agenda.php" class="small-box-footer">Lihat <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="" class="small-box-footer">Lihat <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
-        
-        
       </div>
       <!-- /.row -->
-
       <div class="row">
         <div class="col-xs-12">
           <div class="box box-warning">
@@ -106,55 +111,35 @@
                   <th>Nama</th>
                   <th>Pangkat/Golongan</th>
                   <th>TMT</th>
-                  <th>Jabatan</th>
-                  <th>TMT</th>
+                  <th>KP Yad</th>
                   <th class="text-center" width="90">Menu</th>
                 </tr>
                 </thead>
                 <tbody>
-                
-                  <tr>
-                    <td>1</td>
-                    <td>NIP. 19751206 200112 1 001</td>
-                    <td>Cassandra</td>
-                    <td>Pembina Utama Muda (IV/c)</td>
-                    <td>01-04-2017</td>
-                    <td>Wakil Ketua</td>
-                    <td>28-09-2018</td>
-                    <td style="text-align: center;">
-                      <a href="<?= base_url() ?>pegawai/duk" class="btn btn-info"><i class="fa fa-eye"></i></a>
-                      <button class="btn btn-warning"><i class="fa fa-file-pdf-o"></i></button>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td>2</td>
-                    <td>NIP. 19610923 198303 1 005</td>
-                    <td>HEBBIN SILALAHI, S.H. M.H</td>
-                    <td>Pembina Utama Muda (IV/c)</td>
-                    <td>01-04-2016</td>
-                    <td>Wakil Ketua</td>
-                    <td>20-12-2017</td>
-                    <td style="text-align: center;">
-                      <button class="btn btn-info"><i class="fa fa-eye"></i></button>
-                      <button class="btn btn-warning"><i class="fa fa-file-pdf-o"></i></button>
-                    </td>
-                  </tr>
-
-                   <tr>
-                    <td>3</td>
-                    <td>NIP. 19650807 200003 1 003</td>
-                    <td>ANDI ASMURUF, SH. MH</td>
-                    <td>Pembina (IV/a)</td>
-                    <td>01-10-2015</td>
-                    <td>Hakim Madya Pratama</td>
-                    <td>05-01-2016</td>
-                    <td style="text-align: center;">
-                      <a href="<?= base_url() ?>pegawai/duk" class="btn btn-info"><i class="fa fa-eye"></i></a>
-                      <button class="btn btn-warning"><i class="fa fa-file-pdf-o"></i></button>
-                    </td>
-                  </tr>
-
+                  <?php $i=1;?>
+                  <?php foreach($duk as $d):?>
+                  <?php 
+                    $tanggal = new DateTime($d['naik_pangkat_yad']);
+                    $today = new DateTime('today');
+                    $y = $today->diff($tanggal)->y;
+                    $m = $today->diff($tanggal)->m;
+                  ?>
+                    <?php if($y==0&&$m==0):?>
+                      <tr>
+                        <td><?= $i;?></td>
+                        <td><?= $d['nip'];?></td>
+                        <td><?= $d['nama'];?></td>
+                        <td><?= $d['pangkat'];?> (<?= $d['golongan'];?>)</td>
+                        <td><?= mediumdate_indo($d['tmt_pangkat']);?></td>
+                        <td><?= mediumdate_indo($d['naik_pangkat_yad']);?></td>
+                        <td style="text-align: center;">
+                          <a href="<?= base_url();?>duk/data_duk/<?= $d['id_duk'];?>" class="btn btn-info"><i class="fa fa-eye"></i></a>
+                          <button class="btn btn-warning"><i class="fa fa-file-pdf-o"></i></button>
+                        </td>
+                      </tr>
+                    <?php $i++;?>
+                    <?php endif;?>
+                  <?php endforeach;?>
                 </tbody>
               </table>
             </div>
@@ -165,7 +150,6 @@
         <!-- /.col -->
       </div>
       <!-- /.row -->
-
       <div class="row">
         <div class="col-xs-12">
           <div class="box box-warning">
@@ -182,42 +166,35 @@
                   <th>Nama</th>
                   <th>Pangkat/Golongan</th>
                   <th>TMT</th>
-                  <th>Jabatan</th>
-                  <th>TMT</th>
+                  <th>KGB Yad</th>
                   <th class="text-center" width="90">Menu</th>
                 </tr>
                 </thead>
                 <tbody>
-                
+                  <?php $i=1;?>
+                  <?php foreach($duk as $d):?>
+                  <?php 
+                    $tanggal = new DateTime($d['naik_gaji_yad']);
+                    $today = new DateTime('today');
+                    $y = $today->diff($tanggal)->y;
+                    $m = $today->diff($tanggal)->m;
+                  ?>
+                  <?php if($y==0&&$m==0):?>
                   <tr>
-                    <td>1</td>
-                    <td>NIP. 19751206 200112 1 001</td>
-                    <td>Cassandra</td>
-                    <td>Pembina Utama Muda (IV/c)</td>
-                    <td>01-04-2017</td>
-                    <td>Wakil Ketua</td>
-                    <td>28-09-2018</td>
+                    <td><?= $i;?></td>
+                    <td><?= $d['nip'];?></td>
+                    <td><?= $d['nama'];?></td>
+                    <td><?= $d['pangkat'];?> (<?= $d['golongan'];?>)</td>
+                    <td><?= mediumdate_indo($d['tmt_pangkat']);?></td>
+                    <td><?= mediumdate_indo($d['naik_gaji_yad']);?></td>
                     <td style="text-align: center;">
-                      <a href="<?= base_url() ?>pegawai/duk" class="btn btn-info"><i class="fa fa-eye"></i></a>
+                      <a href="<?= base_url();?>duk/data_duk/<?= $d['id_duk'];?>" class="btn btn-info"><i class="fa fa-eye"></i></a>
                       <button class="btn btn-warning"><i class="fa fa-file-pdf-o"></i></button>
                     </td>
                   </tr>
-
-
-                   <tr>
-                    <td>3</td>
-                    <td>NIP. 19650807 200003 1 003</td>
-                    <td>ANDI ASMURUF, SH. MH</td>
-                    <td>Pembina (IV/a)</td>
-                    <td>01-10-2015</td>
-                    <td>Hakim Madya Pratama</td>
-                    <td>05-01-2016</td>
-                    <td style="text-align: center;">
-                      <a href="<?= base_url() ?>pegawai/duk" class="btn btn-info"><i class="fa fa-eye"></i></a>
-                     <button class="btn btn-warning"><i class="fa fa-file-pdf-o"></i></button>
-                    </td>
-                  </tr>
-
+                  <?php $i++;?>
+                  <?php endif;?>
+                  <?php endforeach;?>
                 </tbody>
               </table>
             </div>
@@ -228,8 +205,6 @@
         <!-- /.col -->
       </div>
       <!-- /.row -->
-
-     
     </section>
     <!-- /.content -->
 </div>
