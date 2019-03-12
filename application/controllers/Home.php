@@ -9,11 +9,14 @@ class Home extends CI_Controller {
         if($this->session->userdata('logged_in_admin') !== TRUE){
             redirect('login');
         }
+
+        $this->load->model('M_duk');
     }
 	public function index()
 	{
         $data['tot_pgw']=$this->db->count_all_results('pegawai');
         $data['tot_usr']=$this->db->count_all_results('user');
+        $data['duk']=$this->M_duk->getAllDataDuk();
 		$data['sidebar']="#mn1";
         $this->load->view('header');
         $this->load->view('home', $data);
