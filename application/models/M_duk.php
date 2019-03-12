@@ -32,4 +32,8 @@ class M_duk extends CI_Model {
         $this->db->where('id_duk',$this->input->post('id'));
         $this->db->update('duk',$data);
     }
+
+    public function hapusDataDuk($id){
+        
+    }
 }
