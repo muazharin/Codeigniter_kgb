@@ -8,11 +8,14 @@ class User extends CI_Controller {
         if($this->session->userdata('logged_in_user') !== TRUE){
             redirect('login');
         }
-        $this->load->model('M_user');
-    }
+		$this->load->model('M_user');
+		$this->load->helper('nominal');
+	}
+	
 	public function index()
 	{
         $data['client']=$this->M_user->dataClient();
+        $data['gaji']=$this->M_user->dataGaji();
         $data['sidebar']="#mn1";
         $this->load->view('user_header',$data);
         $this->load->view('user_home',$data);
