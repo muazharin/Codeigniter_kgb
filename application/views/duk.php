@@ -93,14 +93,14 @@
                     </div>
                   </div>
                   
-                  <div class="form-group">
+                  <div class="form-group">  
                     <label class="col-md-3 control-label">TMT (Jabatan)</label>
                     <div class="col-md-9">
                       <div class="input-group date">
                         <div class="input-group-addon">
                           <i class="fa fa-calendar"></i>
                         </div>
-                        <input type="text" value="<?= $duk['tmt_jabatan'];?>" name="tmt_jabatan" class="form-control pull-right" id="datepicker" required="">
+                        <input type="text" value="<?= $duk['tmt_jabatan'];?>" name="tmt_jabatan" class="form-control pull-right" id="datepicker1" required="">
                       </div>
                     </div>
                   </div>
@@ -140,7 +140,7 @@
                         <div class="input-group-addon">
                           <i class="fa fa-calendar"></i>
                         </div>
-                        <input type="text" value="<?= $duk['naik_pangkat_yad'];?>" name="naik_pangkat" class="form-control pull-right" id="datepicker" required="">
+                        <input type="text" value="<?= $duk['naik_pangkat_yad'];?>" name="naik_pangkat" class="form-control pull-right" id="datepicker2" required="">
                       </div>
                     </div>
                   </div>
@@ -152,7 +152,7 @@
                         <div class="input-group-addon">
                           <i class="fa fa-calendar"></i>
                         </div>
-                        <input type="text" value="<?= $duk['naik_gaji_yad'];?>" name="naik_gaji" class="form-control pull-right" id="datepicker" required="">
+                        <input type="text" value="<?= $duk['naik_gaji_yad'];?>" name="naik_gaji" class="form-control pull-right" id="datepicker3" required="">
                       </div>
                     </div>
                   </div>
