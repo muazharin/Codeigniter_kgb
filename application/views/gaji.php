@@ -19,7 +19,7 @@
             <?php if($this->session->flashdata('gaji')):?>
                 <div class="alert alert-success alert-dismissible" role="alert">
                   <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  Data gaji pegawai <strong>berhasil</strong> <?= $this->session->flashdata('gaji');?>
+                  Data gaji <strong>berhasil</strong> <?= $this->session->flashdata('gaji');?>
                 </div>
             <?php endif;?>
         </div>
@@ -44,7 +44,7 @@
                 <tbody>
                   <?php foreach ($gaji as $g):?>
                   <tr>
-                    <td><?= word_limiter($g['golongan'], 2);?></td>
+                    <td><?= $g['golongan'];?><?= $g['masa_kerja'];?></td>
                     <td><?= $g['masa_kerja'];?></td>
                     <td>Rp <?= nominal($g['gaji_pokok']);?></td>
                     <td style="text-align: center;">
