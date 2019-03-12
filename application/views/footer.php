@@ -61,7 +61,7 @@
   }
 </script>
 <script src="<?= base_url();?>assets/dist/js/demo.js"></script>
-  <script type="text/javascript">
+<script type="text/javascript">
   $(document).ready(function() {
     $('<?= $sidebar; ?>').addClass("active");
   });
@@ -85,8 +85,19 @@
     });
   });
 
-      //Date picker
   $('#datepicker').datepicker({
+    autoclose: true,
+    format: 'yyyy-mm-dd'
+  })
+  $('#datepicker1').datepicker({
+    autoclose: true,
+    format: 'yyyy-mm-dd'
+  })
+  $('#datepicker2').datepicker({
+    autoclose: true,
+    format: 'yyyy-mm-dd'
+  })
+  $('#datepicker3').datepicker({
     autoclose: true,
     format: 'yyyy-mm-dd'
   })
