@@ -1,4 +1,4 @@
-<?php date_default_timezone_set('Asia/Jakarta'); ?>
+<?php date_default_timezone_set('Asia/Makassar'); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -132,7 +132,7 @@
         </div>
       </div>
       <!-- search form  -->
-      <form action="cari.php" method="get" class="sidebar-form">
+      <!-- <form action="cari.php" method="get" class="sidebar-form">
         <div class="input-group">
           <input type="text" name="cari" class="form-control" placeholder="Cari Pegawai">
           <span class="input-group-btn">
@@ -140,7 +140,7 @@
                 </button>
               </span>
         </div>
-      </form>
+      </form> -->
      
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
