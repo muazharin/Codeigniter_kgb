@@ -8,7 +8,7 @@
         <small>Halaman Utama</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="index.php"><i class="fa fa-dashboard"></i> Beranda</a></li>
+        <li><a href=""><i class="fa fa-dashboard"></i> Beranda</a></li>
         <!-- <li class="active">Dashboard</li> -->
       </ol>
     </section>
@@ -23,8 +23,7 @@
           <div class="box box-widget widget-user">
             <!-- Add the bg color to the header using any of the bg-* classes -->
             <div class="widget-user-header bg-aqua-active">
-              <h3 class="widget-user-username" style="margin-top: -15px;"><?= $client['nama'];?></h3>
-              <h5 class="widget-user-desc">Nip. <?= $client['nip'];?></h5>
+              <center><h3 class="widget-user-username" style="margin-top: -20px;"><?= $client['nama'];?></h3></center>
             </div>
             <div class="widget-user-image">
               <img class="img-circle" src="<?= base_url() ?>assets/dist/img/pria.jpg" alt="User Avatar">
@@ -50,7 +49,7 @@
                 <div class="col-sm-4">
                   <div class="description-block">
                     <h5 class="description-header">Gaji</h5>
-                    <span class="description-text">Rp. 4.713.800,00</span>
+                    <span class="description-text">Rp. <?= nominal($gaji['gaji_pokok']);?>,00</span>
                   </div>
                   <!-- /.description-block -->
                 </div>
@@ -70,7 +69,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Kenaikan Pangkat Berikutnya</span>
-              <span class="info-box-number"> <i class="fa fa-calendar"></i> 12 Juni 2019</span>
+              <span class="info-box-number"> <i class="fa fa-calendar"></i> <?= date_indo($client['naik_pangkat_yad']);?></span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -84,7 +83,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Kenaikan Gaji Berikutnya</span>
-              <span class="info-box-number"> <i class="fa fa-calendar"></i> 12 September 2019</span>
+              <span class="info-box-number"> <i class="fa fa-calendar"></i> <?= date_indo($client['naik_gaji_yad']);?></span>
             </div>
             <!-- /.info-box-content -->
           </div>
