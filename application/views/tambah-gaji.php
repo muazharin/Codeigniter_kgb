@@ -22,17 +22,21 @@
             <!-- /.box-header -->
             <div class="box-body">
               <form class="form-horizontal" method="post" action="">
-                  <div class="form-group">
-                    <label class="col-md-2 control-label">Golongan</label>
+                <div class="form-group">
+                  <label class="col-md-2 control-label">Golongan</label>
                     <div class="col-md-8">
-                      <input type="text" name="gol" class="form-control" required>
+                      <select class="form-control" name="gol" required>
+                        <?php foreach($gol as $a):?>
+                            <option value="<?= $a;?>" ><?= $a;?></option>
+                        <?php endforeach;?>
+                      </select>
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="col-md-2 control-label">Masa Kerja</label>
                     <div class="col-md-8">
-                      <input type="text" name="masa_kerja" class="form-control" required>
+                      <input type="number" name="masa_kerja" class="form-control" required>
                     </div>
                   </div>
 
