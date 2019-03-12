@@ -9,6 +9,13 @@ class M_user extends CI_Model {
     public function getPegawaiById($id){
         return $this->db->get_where('pegawai', ['nip'=>$id])->row_array();
     }
+    
+    public function dataGaji(){
+        $nip = $this->session->userdata('username');
+        $query = $this->db->query('SELECT gaji_pokok FROM tb_golongan WHERE golongan = (SELECT golongan FROM duk WHERE nip = '.$nip.') AND masa_kerja = (SELECT masa_kerja_golongan_tahun FROM duk WHERE nip = '.$nip.' )');
+        return $query->row_array();
+    }
+    
     public function ubahDataPegawai(){
         $dataPegawai = [
             'nip'=>$this->input->post('nip',true),
