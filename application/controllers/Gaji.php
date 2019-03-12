@@ -24,6 +24,12 @@ class Gaji extends CI_Controller {
     
     public function tambah()
     {
+        $data['gol']=[
+            'IV/A','IV/B','IV/C','IV/D','IV/E',
+            'III/A','III/B','III/C','III/D',
+            'II/A','II/B','II/C','II/D',
+            'I/A','I/B','I/C','I/D'
+        ];
         $this->form_validation->set_rules('gol', 'Golongan', 'required|xss_clean');
         $this->form_validation->set_rules('masa_kerja', 'Masa Kerja', 'required|xss_clean');
         $this->form_validation->set_rules('gaji_pokok', 'Golongan', 'required|xss_clean|numeric');
@@ -31,7 +37,7 @@ class Gaji extends CI_Controller {
         if($this->form_validation->run()==FALSE){
             $data['sidebar']="#mn3";
             $this->load->view('header');
-            $this->load->view('tambah-gaji');
+            $this->load->view('tambah-gaji',$data);
             $this->load->view('footer', $data);
         }else{
             $this->M_gaji->tambahDataGaji();
@@ -41,10 +47,26 @@ class Gaji extends CI_Controller {
     }
 
     public function detailDataGaji($id){
-        $data['sidebar']="#mn3";
-        $this->load->view('header');
-        $this->load->view('edit-gaji');
-        $this->load->view('footer', $data);
+        $data['gol']=[
+            'IV/A','IV/B','IV/C','IV/D','IV/E',
+            'III/A','III/B','III/C','III/D',
+            'II/A','II/B','II/C','II/D',
+            'I/A','I/B','I/C','I/D'
+        ];
+        $this->form_validation->set_rules('gol', 'Golongan', 'required|xss_clean');
+        $this->form_validation->set_rules('masa_kerja', 'Masa Kerja', 'required|xss_clean');
+        $this->form_validation->set_rules('gaji_pokok', 'Golongan', 'required|xss_clean|numeric');
+        $data['gaji']=$this->M_gaji->getDataGajiById($id);
+        if($this->form_validation->run()==FALSE){
+            $data['sidebar']="#mn3";
+            $this->load->view('header');
+            $this->load->view('edit-gaji',$data);
+            $this->load->view('footer', $data);
+        }else{
+            $this->M_gaji->updateDataGaji();
+			$this->session->set_flashdata('gaji', 'Diperbarui');
+			redirect('gaji');
+        }
     }
 
     public function hapusDataGaji($id){
