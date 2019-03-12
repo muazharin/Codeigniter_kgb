@@ -60,7 +60,7 @@
                     <td><?= $d['naik_gaji_yad'];?></td>
                     <td>
                        <a href="<?= base_url(); ?>duk/data_duk/<?= $d['id_duk']?>" class="btn btn-info"><i class="fa fa-eye"></i></a>
-                       <a href="" class="btn btn-danger"><i class="fa fa-trash-o"></i></a>
+                       
                     </td>
                   </tr>
                   <?php $i++;?>
