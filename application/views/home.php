@@ -83,8 +83,8 @@
           <!-- small box -->
           <div class="small-box bg-red">
             <div class="inner">
-              <h3><?= $tot_usr;?></h3>
-              <p>User</p>
+              <h3><?= $tot_usr['COUNT(*)'];?></h3>
+              <p>User Admin</p>
             </div>
             <div class="icon">
               <i class="fa fa-key"></i>
