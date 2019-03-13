@@ -10,6 +10,11 @@ class M_duk extends CI_Model {
         return $this->db->get_where('duk', ['id_duk'=>$id])->row_array();
     }
 
+    public function getAllAdmin(){
+        $query = $this->db->query("SELECT COUNT(*) FROM user WHERE account='admin'");
+        return $query->row_array();
+    }
+
     public function updateDataDuk(){
         $data=[
             'nip'=>$this->input->post('nip',true),
@@ -31,9 +36,5 @@ class M_duk extends CI_Model {
         ];
         $this->db->where('id_duk',$this->input->post('id'));
         $this->db->update('duk',$data);
-    }
-
-    public function hapusDataDuk($id){
-        
     }
 }
