@@ -24,14 +24,14 @@ class Pegawai extends CI_Controller {
 		$this->form_validation->set_rules('nip', 'NIP', 'required|xss_clean|numeric|max_length[18]');
 		$this->form_validation->set_rules('nama', 'Nama', 'required|xss_clean');
 		$this->form_validation->set_rules('jenis_kelamin', 'Jenis Kelamin', 'required|xss_clean');
-		$this->form_validation->set_rules('tempat_lahir', 'Tempat Lahir', 'required|xss_clean');
-		$this->form_validation->set_rules('tgl_lahir', 'Tanggal Lahir', 'required|xss_clean');
+		$this->form_validation->set_rules('tempat_lahir', 'Tempat Lahir', 'xss_clean');
+		$this->form_validation->set_rules('tgl_lahir', 'Tanggal Lahir', 'xss_clean');
 		$this->form_validation->set_rules('gol_darah', 'Golongan Darah', 'required|xss_clean');
 		$this->form_validation->set_rules('agama', 'Agama', 'required|xss_clean');
-		$this->form_validation->set_rules('no_telp', 'No Telp', 'required|xss_clean');
-		$this->form_validation->set_rules('email', 'Email', 'required|xss_clean|valid_email');
-		$this->form_validation->set_rules('alamat', 'Alamat', 'required|xss_clean');
-		$this->form_validation->set_rules('ket', 'Keterangan', 'required|xss_clean');
+		$this->form_validation->set_rules('no_telp', 'No Telp', 'xss_clean');
+		$this->form_validation->set_rules('email', 'Email', 'xss_clean|valid_email');
+		$this->form_validation->set_rules('alamat', 'Alamat', 'xss_clean');
+		$this->form_validation->set_rules('ket', 'Keterangan', 'xss_clean');
 		if($this->form_validation->run()==FALSE){
 			$data['sidebar']="#mn2";
 			$this->load->view('header');
