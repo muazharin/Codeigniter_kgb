@@ -55,7 +55,7 @@
                   <div class="form-group">
                     <label class="col-md-2 control-label">Tempat Lahir</label>
                     <div class="col-md-8">
-                      <input type="text" name="tempat_lahir" class="form-control" required>
+                      <input type="text" name="tempat_lahir" class="form-control">
                     </div>
                   </div>
 
@@ -66,7 +66,7 @@
                         <div class="input-group-addon">
                           <i class="fa fa-calendar"></i>
                         </div>
-                        <input type="text" name="tgl_lahir" class="form-control pull-right" id="datepicker" required="">
+                        <input type="text" name="tgl_lahir" class="form-control pull-right" id="datepicker" >
                       </div>
                     </div>
                   </div>
@@ -106,28 +106,28 @@
                   <div class="form-group">
                     <label class="col-md-2 control-label">No. Telepon</label>
                     <div class="col-md-8">
-                      <input type="text" name="no_telp" class="form-control" required>
+                      <input type="text" name="no_telp" class="form-control" >
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="col-md-2 control-label">Email</label>
                     <div class="col-md-8">
-                      <input type="email" name="email" class="form-control" required>
+                      <input type="email" name="email" class="form-control" >
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="col-md-2 control-label">Alamat</label>
                     <div class="col-md-8">
-                      <input type="text" name="alamat" class="form-control" required>
+                      <input type="text" name="alamat" class="form-control" >
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="col-md-2 control-label">Keterangan</label>
                     <div class="col-md-8">
-                      <input type="text" name="ket" class="form-control" required>
+                      <input type="text" name="ket" class="form-control" >
                     </div>
                   </div>
 

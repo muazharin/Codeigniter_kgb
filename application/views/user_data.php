@@ -23,6 +23,11 @@
                   Data pegawai <strong>berhasil</strong> <?= $this->session->flashdata('pegawai');?>
                 </div>
             <?php endif;?>
+            <?php if(validation_errors()):?>
+              <div class="alert alert-danger" role="alert">
+                <?= validation_errors();?>
+              </div>
+            <?php endif;?>
         </div>
       </div>
       <div class="row">

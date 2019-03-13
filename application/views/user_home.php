@@ -32,16 +32,16 @@
               <div class="row">
                 <div class="col-sm-4 border-right">
                   <div class="description-block">
-                    <span class="description-text">Pangkat</span>
-                    <h5 class="description-header"><?= $client['pangkat'];?></h5>
+                    <span class="description-header">Pangkat</span>
+                    <h5 class="description-text"><?= $client['pangkat'];?></h5>
                   </div>
                   <!-- /.description-block -->
                 </div>
                 <!-- /.col -->
                 <div class="col-sm-4 border-right">
                   <div class="description-block">
-                    <span class="description-text">Golongan</span>
-                    <h5 class="description-header"><?= $client['golongan'];?></h5>
+                    <span class="description-header">Golongan</span>
+                    <h5 class="description-text"><?= $client['golongan'];?></h5>
                   </div>
                   <!-- /.description-block -->
                 </div>
