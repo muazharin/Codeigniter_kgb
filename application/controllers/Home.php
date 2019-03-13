@@ -15,7 +15,7 @@ class Home extends CI_Controller {
 	public function index()
 	{
         $data['tot_pgw']=$this->db->count_all_results('pegawai');
-        $data['tot_usr']=$this->db->count_all_results('user');
+        $data['tot_usr']=$this->M_duk->getAllAdmin();
         $data['duk']=$this->M_duk->getAllDataDuk();
 		$data['sidebar']="#mn1";
         $this->load->view('header');
