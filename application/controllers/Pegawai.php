@@ -96,7 +96,7 @@ class Pegawai extends CI_Controller {
 		$this->form_validation->set_rules('pb','Password Baru','required|xss_clean');
 		$this->form_validation->set_rules('kpb','Konfirmasi Password','required|xss_clean|matches[pb]');
 		if($this->form_validation->run()==FALSE){
-			$data['sidebar']="";
+			$data['sidebar']="#mn5";
 			$this->load->view('header');
 			$this->load->view('setting',$data);
 			$this->load->view('footer', $data);

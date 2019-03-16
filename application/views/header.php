@@ -171,6 +171,13 @@
           </a>
         </li>
 
+        <li id="mn5">
+          <a href="<?=base_url();?>pegawai/setting">
+            <i class="fa fa-cogs"></i> <span>Pengaturan</span>
+          </a>
+        </li>
+
+
       </ul>
     </section>
     <!-- /.sidebar -->

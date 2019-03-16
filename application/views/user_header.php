@@ -103,9 +103,9 @@
               
               <!-- Menu Footer-->
               <li class="user-footer">
-                <div class="pull-left">
+               <!--  <div class="pull-left">
                   <a href="setting.php" class="btn btn-default btn-flat">Pengaturan</a>
-                </div>
+                </div> -->
                 <div class="pull-right">
                   <a href="<?= base_url();?>login/logout" onclick="return confirm('Apakah Anda yakin ingin keluar?')" class="btn btn-default btn-flat">Keluar</a>
                 </div>

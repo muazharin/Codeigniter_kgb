@@ -95,6 +95,13 @@
         <!-- ./col -->
       </div>
       <!-- /.row -->
+
+
+      <div class="alert alert-success alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        Pegawai <strong>12435435</strong> Atas Nama <strong>Artono Dwi R</strong> Mendapatkan Kenaikan Gaji dan Pangkat Bulan ini
+      </div>
+
       <div class="row">
         <div class="col-xs-12">
           <div class="box box-warning">
@@ -150,6 +157,7 @@
         <!-- /.col -->
       </div>
       <!-- /.row -->
+
       <div class="row">
         <div class="col-xs-12">
           <div class="box box-warning">
@@ -189,7 +197,7 @@
                     <td><?= mediumdate_indo($d['naik_gaji_yad']);?></td>
                     <td style="text-align: center;">
                       <a href="<?= base_url();?>duk/data_duk/<?= $d['id_duk'];?>" class="btn btn-info"><i class="fa fa-eye"></i></a>
-                      <button class="btn btn-warning"><i class="fa fa-file-pdf-o"></i></button>
+                      <button class="btn btn-success"><i class="fa fa-print"></i></button>
                     </td>
                   </tr>
                   <?php $i++;?>

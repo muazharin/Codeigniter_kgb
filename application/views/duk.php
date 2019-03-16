@@ -188,7 +188,8 @@
                   <div class="form-group">
                     <!-- <div class="col-md-2"></div> -->
                     <div class="col-md-12">
-                      <button type="submit" class="btn btn-success" style="float: right;"> <i class="fa fa-save"></i> Perbarui Data</button>
+                      <a onclick="return confirm('Pastikan data sudah benar sebelum dicetak.\nKlik Ok jika data sudah benar')" class="btn btn-success" href="#" style="float: right;"> <i class="fa fa-print"></i> Cetak</a>
+                      <button type="submit" class="btn btn-primary" style="float: right; margin-right: 7px;"> <i class="fa fa-save"></i> Perbarui Data</button>
                     </div>
                   </div>               
                 </form>

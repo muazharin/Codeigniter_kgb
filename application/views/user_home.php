@@ -23,7 +23,7 @@
           <div class="box box-widget widget-user">
             <!-- Add the bg color to the header using any of the bg-* classes -->
             <div class="widget-user-header bg-aqua-active">
-              <center><h3 class="widget-user-username" style="margin-top: -20px;"><?= $client['nama'];?></h3></center>
+              <center><h3 class="widget-user-username" style="margin-top: -15px;"><?= $client['nama'];?></h3></center>
             </div>
             <div class="widget-user-image">
               <img class="img-circle" src="<?= base_url() ?>assets/dist/img/pria.jpg" alt="User Avatar">
