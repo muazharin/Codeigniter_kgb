@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 15, 2019 at 10:50 AM
+-- Generation Time: Mar 17, 2019 at 10:52 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.0
 
@@ -54,7 +54,26 @@ CREATE TABLE `duk` (
 
 INSERT INTO `duk` (`id_duk`, `nip`, `nama`, `pangkat`, `golongan`, `tmt_pangkat`, `jabatan`, `tmt_jabatan`, `masa_kerja_golongan_tahun`, `masa_kerja_golongan_bulan`, `masa_kerja_seluruh_tahun`, `masa_kerja_seluruh_bulan`, `naik_pangkat_yad`, `naik_gaji_yad`, `usia`, `pendidikan`, `keterangan`) VALUES
 (3, '196805191991121001', 'RUDI SUPARMONO, S.H.,M.H.', 'Pembina Utama Muda', 'IV/C', '2017-04-01', 'Ketua', '2018-09-28', 26, 1, 27, 2, '2021-04-01', '2020-12-01', 51, 'Magister', 'Tidak Ada'),
-(5, '196109231983031005', 'HEBBIN SILALAHI, S.H. M.H', '', '', '0000-00-00', '', '0000-00-00', 0, 0, 0, 0, '0000-00-00', '0000-00-00', 0, '', 'qwe');
+(5, '196109231983031005', 'HEBBIN SILALAHI, S.H. M.H', 'Pembina Utama', 'IV/A', '0000-00-00', 'qwe', '0000-00-00', 0, 0, 0, 0, '2019-03-01', '2019-03-01', 28, 'Magister', 'Tidak Ada');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ketua_pn`
+--
+
+CREATE TABLE `ketua_pn` (
+  `id_ketua` int(11) NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  `nip` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `ketua_pn`
+--
+
+INSERT INTO `ketua_pn` (`id_ketua`, `nama`, `nip`) VALUES
+(1, 'Muazharin Alfan', '643624328312312559');
 
 -- --------------------------------------------------------
 
@@ -665,6 +684,12 @@ ALTER TABLE `duk`
   ADD PRIMARY KEY (`id_duk`);
 
 --
+-- Indexes for table `ketua_pn`
+--
+ALTER TABLE `ketua_pn`
+  ADD PRIMARY KEY (`id_ketua`);
+
+--
 -- Indexes for table `pegawai`
 --
 ALTER TABLE `pegawai`
@@ -691,6 +716,12 @@ ALTER TABLE `user`
 --
 ALTER TABLE `duk`
   MODIFY `id_duk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `ketua_pn`
+--
+ALTER TABLE `ketua_pn`
+  MODIFY `id_ketua` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `pegawai`
