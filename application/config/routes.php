@@ -52,3 +52,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+$route['pegawai'] = 'pegawai';
+$route['duk'] = 'duk';
+$route['gaji'] = 'gaji';
+$route['setting'] = 'pegawai/setting';
+$route['data_duk/(:num)'] = 'duk/data_duk/$1';
+
+//routes tambah
+$route['tambah_gaji'] = 'gaji/tambah';
+$route['tambah_pegawai'] = 'pegawai/tambah';
+
+//routes hapus
+$route['hapusPegawai/(:num)'] = 'pegawai/hapusPegawai/$1';
+$route['hapusGaji/(:num)'] = 'gaji/hapusDataGaji/$1';
+
+//routes detail
+$route['detailGaji/(:num)'] = 'gaji/detailDataGaji/$1';
+$route['detailPegawai/(:num)'] = 'pegawai/detailPegawai/$1';
+
+//routes export
+$route['export_pegawai'] = 'pegawai/export';
+$route['export_duk'] = 'duk/export';
+$route['export_gaji'] = 'gaji/export';
+
