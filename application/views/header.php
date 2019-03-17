@@ -104,7 +104,7 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="<?= base_url() ?>pegawai/setting" class="btn btn-default btn-flat">Pengaturan</a>
+                  <a href="<?= base_url() ?>setting" class="btn btn-default btn-flat">Pengaturan</a>
                 </div>
                 <div class="pull-right">
                   <a href="<?= base_url();?>login/logout" onclick="return confirm('Apakah Anda yakin ingin keluar?')" class="btn btn-default btn-flat">Keluar</a>
@@ -172,7 +172,7 @@
         </li>
 
         <li id="mn5">
-          <a href="<?=base_url();?>pegawai/setting">
+          <a href="<?=base_url();?>setting">
             <i class="fa fa-cogs"></i> <span>Pengaturan</span>
           </a>
         </li>

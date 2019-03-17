@@ -8,7 +8,7 @@
         <small>Pegawai</small>
       </h1>
       <ol class="breadcrumb">
-        <button class="btn btn-success"><i class="fa fa-file-excel-o"></i> Export</button>
+      <a href="<?= base_url();?>export_duk" class="btn btn-success"><i class="fa fa-file-excel-o"></i> Export</a>
       </ol>
     </section>
 
@@ -59,7 +59,7 @@
                     <td><?= $d['naik_pangkat_yad'];?></td>
                     <td><?= $d['naik_gaji_yad'];?></td>
                     <td>
-                       <a href="<?= base_url(); ?>duk/data_duk/<?= $d['id_duk']?>" class="btn btn-info"><i class="fa fa-eye"></i></a>
+                       <a href="<?= base_url(); ?>data_duk/<?= $d['id_duk']?>" class="btn btn-info"><i class="fa fa-eye"></i></a>
                        <a href="#" class="btn btn-success"><i class="fa fa-print"></i></a>
                     </td>
                   </tr>

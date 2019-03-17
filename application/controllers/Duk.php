@@ -63,4 +63,77 @@ class Duk extends CI_Controller {
 			redirect('duk');
         }
     }
+
+    public function export(){
+
+		$data['duk']=$this->M_duk->getAllDataDuk();
+
+		require(APPPATH.'PHPExcel/Classes/PHPExcel.php');
+		require(APPPATH.'PHPExcel/Classes/PHPExcel/Writer/Excel2007.php');
+
+		$objPhpExcel = new PHPExcel();
+
+		$objPhpExcel->getProperties()->setCreator("codeXV");
+		$objPhpExcel->getProperties()->setLastModifiedBy("codeXV");
+		$objPhpExcel->getProperties()->setTitle("Data Duk");
+		$objPhpExcel->getProperties()->setSubject("codeXV");
+		$objPhpExcel->getProperties()->setDescription("Data Duk PN Kendari");
+
+		$objPhpExcel->setActiveSheetIndex(0);
+
+		$objPhpExcel->getActiveSheet()->setCellValue('A1','No');
+		$objPhpExcel->getActiveSheet()->setCellValue('B1','NIP');
+		$objPhpExcel->getActiveSheet()->setCellValue('C1','Nama');
+		$objPhpExcel->getActiveSheet()->setCellValue('D1','Pangkat');
+		$objPhpExcel->getActiveSheet()->setCellValue('E1','Golongan');
+		$objPhpExcel->getActiveSheet()->setCellValue('F1','TMT Pangkat');
+		$objPhpExcel->getActiveSheet()->setCellValue('G1','Jabatan');
+		$objPhpExcel->getActiveSheet()->setCellValue('H1','TMT Jabatan');
+		$objPhpExcel->getActiveSheet()->setCellValue('I1','Masa Kerja Golongan (Tahun)');
+		$objPhpExcel->getActiveSheet()->setCellValue('J1','Masa Kerja Golongan (Bulan)');
+		$objPhpExcel->getActiveSheet()->setCellValue('K1','Masa Kerja Keseluruhan (Tahun)');
+		$objPhpExcel->getActiveSheet()->setCellValue('L1','Masa Kerja Keseluruhan (Bulan)');
+		$objPhpExcel->getActiveSheet()->setCellValue('M1','Naik Pangkat YAD');
+		$objPhpExcel->getActiveSheet()->setCellValue('N1','Naik Gaji YAD');
+		$objPhpExcel->getActiveSheet()->setCellValue('O1','Usia');
+        $objPhpExcel->getActiveSheet()->setCellValue('P1','Pendidikan');
+        $objPhpExcel->getActiveSheet()->setCellValue('Q1','Keterangan');
+        
+		$baris=2;
+		$x=1;
+
+		foreach($data['duk'] as $p){
+			$objPhpExcel->getActiveSheet()->setCellValue('A'.$baris, $x);
+			$objPhpExcel->getActiveSheet()->setCellValue('B'.$baris, $p['nip']);
+			$objPhpExcel->getActiveSheet()->setCellValue('C'.$baris, $p['nama']);
+			$objPhpExcel->getActiveSheet()->setCellValue('D'.$baris, $p['pangkat']);
+			$objPhpExcel->getActiveSheet()->setCellValue('E'.$baris, $p['golongan']);
+			$objPhpExcel->getActiveSheet()->setCellValue('F'.$baris, $p['tmt_pangkat']);
+			$objPhpExcel->getActiveSheet()->setCellValue('G'.$baris, $p['jabatan']);
+			$objPhpExcel->getActiveSheet()->setCellValue('H'.$baris, $p['tmt_jabatan']);
+			$objPhpExcel->getActiveSheet()->setCellValue('I'.$baris, $p['masa_kerja_golongan_tahun']);
+			$objPhpExcel->getActiveSheet()->setCellValue('J'.$baris, $p['masa_kerja_golongan_bulan']);
+			$objPhpExcel->getActiveSheet()->setCellValue('K'.$baris, $p['masa_kerja_seluruh_tahun']);
+			$objPhpExcel->getActiveSheet()->setCellValue('L'.$baris, $p['masa_kerja_seluruh_bulan']);
+			$objPhpExcel->getActiveSheet()->setCellValue('M'.$baris, $p['naik_pangkat_yad']);
+			$objPhpExcel->getActiveSheet()->setCellValue('N'.$baris, $p['naik_gaji_yad']);
+			$objPhpExcel->getActiveSheet()->setCellValue('O'.$baris, $p['usia']);
+			$objPhpExcel->getActiveSheet()->setCellValue('P'.$baris, $p['pendidikan']);
+			$objPhpExcel->getActiveSheet()->setCellValue('Q'.$baris, $p['keterangan']);
+			$x++;
+			$baris++;
+		}
+
+		$filename="Data Duk PN Kendari".date('d-m-Y').'xlsx';
+
+		$objPhpExcel->getActiveSheet()->setTitle('Data Pegawai');
+		header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+		header('Content-Disposition: attachment; filename"'.$filename.'"');
+		header('Cache-Control: max-age=0');
+
+		$write=PHPExcel_IOFactory::createWriter($objPhpExcel,'Excel2007');
+		$write->save('php://output');
+
+		exit;
+	}
 }

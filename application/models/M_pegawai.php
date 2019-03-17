@@ -106,4 +106,17 @@ class M_Pegawai extends CI_Model {
         $this->db->where('id', 1);
         $this->db->update('user',$data);
     }
+
+    public function ketua(){
+        return $this->db->get_where('ketua_pn', ['id_ketua'=>1])->row_array();
+    }
+
+    public function resetKetua(){
+        $data=[
+            'nama' => $this->input->post('namaK',true),
+            'nip' => $this->input->post('nipK',true)
+        ];
+        $this->db->where('id_ketua', 1);
+        $this->db->update('ketua_pn',$data);
+    }
 }

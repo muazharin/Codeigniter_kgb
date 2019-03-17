@@ -26,6 +26,12 @@
                 Password <strong>berhasil</strong> <?= $this->session->flashdata('pegawai');?>
               </div>
           <?php endif;?>
+          <?php if($this->session->flashdata('ketua')):?>
+              <div class="alert alert-success alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                Data Ketua PN Kendari <strong>berhasil</strong> <?= $this->session->flashdata('ketua');?>
+              </div>
+          <?php endif;?>
           <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
               
@@ -67,16 +73,16 @@
               <div class="tab-pane" id="pejabat">
                 <div class="row">
                 <div class="col-md-6">
-                 <form method="post" action="">
+                 <form method="post" action="<?=base_url();?>pegawai/upKetua">
 
                   <div class="form-group">
                     <label>Ketua Pengadilan Negeri Kendari</label>
-                    <input type="text" class="form-control" name="" value="Artono Dwi R" required>
+                    <input type="text" class="form-control" name="namaK" value="<?= $ketua['nama'];?>" required>
                   </div>
 
                   <div class="form-group">
                     <label>NIP</label>
-                    <input type="text" class="form-control" name="" value="6436243283123" required>
+                    <input type="text" class="form-control" name="nipK" value="<?= $ketua['nip'];?>" required>
                   </div>
                  
                   <div class="form-group">

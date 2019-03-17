@@ -74,4 +74,52 @@ class Gaji extends CI_Controller {
 		$this->session->set_flashdata('gaji', 'Dihapus');
 		redirect('gaji');
     }
+
+    public function export(){
+
+		$data['gaji']=$this->M_gaji->getAllDataGaji();
+
+		require(APPPATH.'PHPExcel/Classes/PHPExcel.php');
+		require(APPPATH.'PHPExcel/Classes/PHPExcel/Writer/Excel2007.php');
+
+		$objPhpExcel = new PHPExcel();
+
+		$objPhpExcel->getProperties()->setCreator("codeXV");
+		$objPhpExcel->getProperties()->setLastModifiedBy("codeXV");
+		$objPhpExcel->getProperties()->setTitle("Tabel Gaji");
+		$objPhpExcel->getProperties()->setSubject("codeXV");
+		$objPhpExcel->getProperties()->setDescription("Tabel Gaji PN Kendari");
+
+		$objPhpExcel->setActiveSheetIndex(0);
+
+		$objPhpExcel->getActiveSheet()->setCellValue('A1','No');
+		$objPhpExcel->getActiveSheet()->setCellValue('B1','Golongan');
+		$objPhpExcel->getActiveSheet()->setCellValue('C1','Masa Kerja (Tahun)');
+		$objPhpExcel->getActiveSheet()->setCellValue('D1','Gaji Pokok');
+        
+		$baris=2;
+		$x=1;
+
+		foreach($data['gaji'] as $p){
+			$objPhpExcel->getActiveSheet()->setCellValue('A'.$baris, $x);
+			$objPhpExcel->getActiveSheet()->setCellValue('B'.$baris, $p['golongan']);
+			$objPhpExcel->getActiveSheet()->setCellValue('C'.$baris, $p['masa_kerja']);
+            $objPhpExcel->getActiveSheet()->setCellValue('D'.$baris, $p['gaji_pokok']);
+            
+			$x++;
+			$baris++;
+		}
+
+		$filename="Tabel Gaji PN Kendari".date('d-m-Y').'xlsx';
+
+		$objPhpExcel->getActiveSheet()->setTitle('Data Pegawai');
+		header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+		header('Content-Disposition: attachment; filename"'.$filename.'"');
+		header('Cache-Control: max-age=0');
+
+		$write=PHPExcel_IOFactory::createWriter($objPhpExcel,'Excel2007');
+		$write->save('php://output');
+
+		exit;
+	}
 }

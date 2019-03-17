@@ -7,8 +7,8 @@
         <small>Referensi Gaji</small>
       </h1>
       <ol class="breadcrumb">
-        <button class="btn btn-success"><i class="fa fa-file-excel-o"></i> Export</button>
-        <a href="<?= base_url() ?>gaji/tambah" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Data</a>
+        <a href="<?= base_url();?>export_gaji" class="btn btn-success"><i class="fa fa-file-excel-o"></i> Export</a>
+        <a href="<?= base_url() ?>tambah_gaji" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Data</a>
       </ol>
     </section>
 
@@ -48,8 +48,8 @@
                     <td><?= $g['masa_kerja'];?></td>
                     <td>Rp <?= nominal($g['gaji_pokok']);?></td>
                     <td style="text-align: center;">
-                      <a href="<?= base_url();?>gaji/detailDataGaji/<?= $g['id_golongan'];?>" class="btn btn-warning"><i class="fa fa-edit"></i></a>
-                      <a href="<?= base_url();?>gaji/hapusDataGaji/<?= $g['id_golongan'];?>" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                      <a href="<?= base_url();?>detailGaji/<?= $g['id_golongan'];?>" class="btn btn-warning"><i class="fa fa-edit"></i></a>
+                      <a href="<?= base_url();?>hapusGaji/<?= $g['id_golongan'];?>" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                     </td>
                   </tr>
                   <?php endforeach;?>

@@ -96,12 +96,25 @@
       </div>
       <!-- /.row -->
 
-
-      <div class="alert alert-success alert-dismissible" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        Pegawai <strong>12435435</strong> Atas Nama <strong>Artono Dwi R</strong> Mendapatkan Kenaikan Gaji dan Pangkat Bulan ini
-      </div>
-
+      <?php if($y==0 && $m==0 && $y1==0 && $m1==0):?>
+        <div class="alert alert-success alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <?php foreach($duk as $d):?>
+            <?php 
+              $tanggal = new DateTime($d['naik_pangkat_yad']);
+              $tanggal1 = new DateTime($d['naik_gaji_yad']);
+              $today = new DateTime('today');
+              $y = $today->diff($tanggal)->y;
+              $m = $today->diff($tanggal)->m;
+              $y1 = $today->diff($tanggal1)->y;
+              $m1 = $today->diff($tanggal1)->m;
+            ?>
+              <?php if($y==0 && $m==0 && $y1==0 && $m1==0):?>
+                Pegawai <strong><?= $d['nip'];?></strong> Atas Nama <strong><?= $d['nama'];?></strong> Mendapatkan Kenaikan Gaji dan Pangkat Bulan ini<br>
+              <?php endif;?>
+            <?php endforeach;?>
+        </div>
+      <?php endif;?>
       <div class="row">
         <div class="col-xs-12">
           <div class="box box-warning">
@@ -140,8 +153,8 @@
                         <td><?= mediumdate_indo($d['tmt_pangkat']);?></td>
                         <td><?= mediumdate_indo($d['naik_pangkat_yad']);?></td>
                         <td style="text-align: center;">
-                          <a href="<?= base_url();?>duk/data_duk/<?= $d['id_duk'];?>" class="btn btn-info"><i class="fa fa-eye"></i></a>
-                          <button class="btn btn-warning"><i class="fa fa-file-pdf-o"></i></button>
+                          <a href="<?= base_url();?>data_duk/<?= $d['id_duk'];?>" class="btn btn-info"><i class="fa fa-eye"></i></a>
+                          <button class="btn btn-success"><i class="fa fa-print"></i></button>
                         </td>
                       </tr>
                     <?php $i++;?>

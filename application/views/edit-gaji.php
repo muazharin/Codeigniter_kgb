@@ -5,7 +5,7 @@
       <h1>
         Edit Data
         <small>Gaji Pegawai</small>
-        <a href="<?= base_url() ?>gaji" class="btn btn-warning" style="float: right;"> <i class="fa fa-angle-double-left"></i> Kembali</a>
+        <a href="<?= base_url() ?>gaji" class="btn bg-navy" style="float: right;"> <i class="fa fa-angle-double-left"></i> Kembali</a>
       </h1>
       <ol class="breadcrumb">
        
