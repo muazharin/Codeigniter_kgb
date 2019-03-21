@@ -4,6 +4,9 @@ if (!defined('BASEPATH')) exit('No direct script access allowed');
 class Laporan extends CI_Controller {
     public function __construct() {   
         parent::__construct();
+        if($this->session->userdata('logged_in_admin') !== TRUE){
+            redirect('login');
+        }
         $this->load->model('M_duk');
         $this->load->model('M_pegawai');
     }
@@ -28,6 +31,24 @@ class Laporan extends CI_Controller {
         $data['gaji']=$this->M_duk->dataGaji($id,$nip);
         $data['gaji_baru']=$this->M_duk->dataGajiBaru($id,$nip);
         $this->form_validation->set_rules('no1','Nomor','xss_clean|required');
+        $this->form_validation->set_rules('nip','NIP','xss_clean|required|numeric|max_length[18]');
+        $this->form_validation->set_rules('nama','Nama','xss_clean|required');
+        $this->form_validation->set_rules('pangkat','Pangkat','xss_clean|required');
+        $this->form_validation->set_rules('golongan','Golongan','xss_clean|required');
+        $this->form_validation->set_rules('jabatan','Jabatan','xss_clean|required');
+        $this->form_validation->set_rules('unit','Unit','xss_clean|required');
+        $this->form_validation->set_rules('pejabat','Pejabat','xss_clean|required');
+        $this->form_validation->set_rules('tmt_gaji1','Terhitung Mulai Tanggal','xss_clean|required');
+        $this->form_validation->set_rules('no2','Nomor','xss_clean|required');
+        $this->form_validation->set_rules('gaji_pokok','Gaji Pokok','xss_clean|required');
+        $this->form_validation->set_rules('mkgt1','MKGT','xss_clean|required');
+        $this->form_validation->set_rules('mkgb1','MKGB','xss_clean|required');
+        $this->form_validation->set_rules('gaji_pokok2','Gaji Pokok2','xss_clean|required|numeric');
+        $this->form_validation->set_rules('mkgt2','MKGT2','xss_clean|required');
+        $this->form_validation->set_rules('mkgb2','MKGB2','xss_clean|required');
+        $this->form_validation->set_rules('golongan2','Golongan2','xss_clean|required');
+        $this->form_validation->set_rules('tmt_gaji2','tmt_gaji2','xss_clean|required');
+        $this->form_validation->set_rules('tmt_gaji3','tmt_gaji3','xss_clean|required');
         if($this->form_validation->run() == FALSE){
             $data['sidebar']="#mn1";
             $this->load->view('header');
