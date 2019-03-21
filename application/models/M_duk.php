@@ -37,4 +37,24 @@ class M_duk extends CI_Model {
         $this->db->where('id_duk',$this->input->post('id'));
         $this->db->update('duk',$data);
     }
+
+    public function dataGaji($id,$nip){
+        $query = $this->db->query('SELECT gaji_pokok FROM tb_golongan WHERE golongan = (SELECT golongan FROM duk WHERE nip = '.$nip.') AND masa_kerja = (SELECT masa_kerja_golongan_tahun FROM duk WHERE nip = '.$nip.' )');
+        return $query->row_array();
+    }
+    
+    public function dataGajiBaru($id,$nip){
+        $query = $this->db->query('SELECT gaji_pokok FROM tb_golongan WHERE golongan = (SELECT golongan FROM duk WHERE nip = '.$nip.') AND masa_kerja = ((SELECT masa_kerja_golongan_tahun FROM duk WHERE nip = '.$nip.' )+2)');
+        return $query->row_array();
+    }
+
+    public function getKetua(){
+        $query = $this->db->query("SELECT nama FROM duk WHERE jabatan='Ketua'");
+        return $query->row_array();
+    }
+    
+    public function getNipKetua(){
+        $query = $this->db->query("SELECT nip FROM duk WHERE jabatan='Ketua'");
+        return $query->row_array();
+    }
 }
