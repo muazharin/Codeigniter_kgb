@@ -210,7 +210,7 @@
                     <td><?= mediumdate_indo($d['naik_gaji_yad']);?></td>
                     <td style="text-align: center;">
                       <a href="<?= base_url();?>duk/data_duk/<?= $d['id_duk'];?>" class="btn btn-info"><i class="fa fa-eye"></i></a>
-                      <a href="<?= base_url(); ?>laporan/print/<?= $d['id_duk']?>" class="btn btn-success"><i class="fa fa-print"></i></a>
+                      <a href="<?= base_url(); ?>laporan/check/<?= $d['id_duk']?>/<?= $d['nip']?>" class="btn btn-success"><i class="fa fa-print"></i></a>
                     </td>
                   </tr>
                   <?php $i++;?>
