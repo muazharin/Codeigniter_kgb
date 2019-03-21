@@ -57,4 +57,13 @@ class M_duk extends CI_Model {
         $query = $this->db->query("SELECT nip FROM duk WHERE jabatan='Ketua'");
         return $query->row_array();
     }
+
+    public function updateDataKGB($id){
+        $data=[
+            'masa_kerja_golongan_tahun'=>$this->input->post('mkgt2',true),
+            'naik_gaji_yad'=>$this->input->post('tmt_gaji3',true)
+        ];
+        $this->db->where('id_duk',$id);
+        $this->db->update('duk',$data);
+    }
 }

@@ -43,7 +43,7 @@ class Laporan extends CI_Controller {
         $this->form_validation->set_rules('gaji_pokok','Gaji Pokok','xss_clean|required');
         $this->form_validation->set_rules('mkgt1','MKGT','xss_clean|required');
         $this->form_validation->set_rules('mkgb1','MKGB','xss_clean|required');
-        $this->form_validation->set_rules('gaji_pokok2','Gaji Pokok2','xss_clean|required|numeric');
+        $this->form_validation->set_rules('gaji_pokok2','Gaji Pokok Baru','xss_clean|required|numeric');
         $this->form_validation->set_rules('mkgt2','MKGT2','xss_clean|required');
         $this->form_validation->set_rules('mkgb2','MKGB2','xss_clean|required');
         $this->form_validation->set_rules('golongan2','Golongan2','xss_clean|required');
@@ -78,34 +78,35 @@ class Laporan extends CI_Controller {
             ];
             $data['ketua']=$this->M_duk->getKetua();
             $data['nipketua']=$this->M_duk->getNipKetua();
+            $this->M_duk->updateDataKGB($this->input->post('id'));
             $this->load->library('Pdf');
             $this->load->view('laporan',$data);
         }
     }
     
-    public function print($id){
-        $this->load->library('Pdf');
-        $data=[
-            'no1'=>$this->input->post('no1',true),
-            'nip'=>$this->input->post('nip',true),
-            'nama'=>$this->input->post('nama',true),
-            'pangkat'=>$this->input->post('pangkat',true),
-            'golongan'=>$this->input->post('golongan',true),
-            'jabatan'=>$this->input->post('jabatan',true),
-            'unit'=>$this->input->post('unit',true),
-            'pejabat'=>$this->input->post('pejabat',true),
-            'tmt_gaji1'=>$this->input->post('tmt_gaji1',true),
-            'no2'=>$this->input->post('no2',true),
-            'gaji_pokok'=>$this->input->post('gaji_pokok',true),
-            'mkgt1'=>$this->input->post('mkgt1',true),
-            'mkgb1'=>$this->input->post('mkgb1',true),
-            'gaji_pokok2'=>$this->input->post('gaji_pokok2',true),
-            'mkgt2'=>$this->input->post('mkgt2',true),
-            'mkgb2'=>$this->input->post('mkgb2',true),
-            'golongan2'=>$this->input->post('golongan2',true),
-            'tmt_gaji2'=>$this->input->post('tmt_gaji2',true)
-        ];
-        //$data['duk']=$this->M_duk->getDataDukById($id);
-        $this->load->view('laporan',$data);
-    }
+    // public function print($id){
+    //     $this->load->library('Pdf');
+    //     $data=[
+    //         'no1'=>$this->input->post('no1',true),
+    //         'nip'=>$this->input->post('nip',true),
+    //         'nama'=>$this->input->post('nama',true),
+    //         'pangkat'=>$this->input->post('pangkat',true),
+    //         'golongan'=>$this->input->post('golongan',true),
+    //         'jabatan'=>$this->input->post('jabatan',true),
+    //         'unit'=>$this->input->post('unit',true),
+    //         'pejabat'=>$this->input->post('pejabat',true),
+    //         'tmt_gaji1'=>$this->input->post('tmt_gaji1',true),
+    //         'no2'=>$this->input->post('no2',true),
+    //         'gaji_pokok'=>$this->input->post('gaji_pokok',true),
+    //         'mkgt1'=>$this->input->post('mkgt1',true),
+    //         'mkgb1'=>$this->input->post('mkgb1',true),
+    //         'gaji_pokok2'=>$this->input->post('gaji_pokok2',true),
+    //         'mkgt2'=>$this->input->post('mkgt2',true),
+    //         'mkgb2'=>$this->input->post('mkgb2',true),
+    //         'golongan2'=>$this->input->post('golongan2',true),
+    //         'tmt_gaji2'=>$this->input->post('tmt_gaji2',true)
+    //     ];
+    //     //$data['duk']=$this->M_duk->getDataDukById($id);
+    //     $this->load->view('laporan',$data);
+    // }
 }

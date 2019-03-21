@@ -188,8 +188,7 @@
                   <div class="form-group">
                     <!-- <div class="col-md-2"></div> -->
                     <div class="col-md-12">
-                      <a onclick="return confirm('Pastikan data sudah benar sebelum dicetak.\nKlik Ok jika data sudah benar')" class="btn btn-success" href="<?= base_url(); ?>laporan/print/<?= $duk['id_duk']?>" style="float: right;"> <i class="fa fa-print"></i> Cetak</a>
-                      <button type="submit" class="btn btn-primary" style="float: right; margin-right: 7px;"> <i class="fa fa-save"></i> Perbarui Data</button>
+                      <button type="submit" class="btn btn-primary" style="float: right;"> <i class="fa fa-save"></i> Perbarui Data</button>
                     </div>
                   </div>               
                 </form>
