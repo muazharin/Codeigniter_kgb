@@ -13,6 +13,7 @@ class M_Gaji extends CI_Model {
     }
 
     public function getAllDataGaji(){
+        $this->db->order_by('gaji_pokok', 'ASC');
         return $this->db->get('tb_golongan')->result_array();
     }
     

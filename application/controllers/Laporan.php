@@ -83,6 +83,11 @@ class Laporan extends CI_Controller {
             $this->load->view('laporan',$data);
         }
     }
+
+    public function print($id){
+        $this->load->library('Pdf');
+        $this->load->view('laporan2');
+    }
     
     // public function print($id){
     //     $this->load->library('Pdf');
