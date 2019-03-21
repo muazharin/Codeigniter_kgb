@@ -43,7 +43,7 @@
                   <th>Jabatan</th>
                   <th>KP Yad</th>
                   <th>KGB Yad</th>
-                  <th class="text-center" width="70">Menu</th>
+                  <th class="text-center" width="auto">Menu</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -60,7 +60,6 @@
                     <td><?= $d['naik_gaji_yad'];?></td>
                     <td>
                        <a href="<?= base_url(); ?>data_duk/<?= $d['id_duk']?>" class="btn btn-info"><i class="fa fa-eye"></i></a>
-                       <a href="<?= base_url(); ?>laporan/print/<?= $d['id_duk']?>" class="btn btn-success"><i class="fa fa-print"></i></a>
                     </td>
                   </tr>
                   <?php $i++;?>
