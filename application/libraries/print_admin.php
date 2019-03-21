@@ -2,19 +2,7 @@
 error_reporting(E_ALL ^ E_DEPRECATED);
 include 'koneksi/config.php';
 require('fpdf181/fpdf.php');
-/**
- Judul  : Laporan PDF (portait):
- Level  : Menengah
- Author : Hakko Bio Richard
- Blog   : www.hakkoblogs.com
- Web    : www.niqoweb.com
- Email  : hakkobiorichard@ygmail.com
- 
- Untuk tutorial yang lainnya silahkan berkunjung ke www.hakkoblogs.com
- 
- Butuh jasa pembuatan website, aplikasi, pembuatan program TA dan Skripsi.? Hubungi NiqoWeb ==>> 085694984803
- 
- **/
+
 //Menampilkan data dari tabel di database
 $id=$_GET['id'];
 $result=mysql_query("SELECT * FROM `pegawai` WHERE id = '$id'");
