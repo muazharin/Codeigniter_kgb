@@ -1,6 +1,6 @@
 
 <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+<div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
@@ -36,7 +36,6 @@
             <ul class="nav nav-tabs">
               
               <li class="active"><a href="#settings" data-toggle="tab">Pengaturan Login</a></li>
-              <!-- <li><a href="#pejabat" data-toggle="tab">Pejabat / Petinggi</a></li> -->
             </ul>
             <div class="tab-content">
             
@@ -69,36 +68,6 @@
                 </form>
               </div>
               <!-- /.tab-pane -->
-
-              <div class="tab-pane" id="pejabat">
-                <div class="row">
-                <div class="col-md-6">
-                 <form method="post" action="<?=base_url();?>pegawai/upKetua">
-
-                  <div class="form-group">
-                    <label>Ketua Pengadilan Negeri Kendari</label>
-                    <input type="text" class="form-control" name="namaK" value="<?= $ketua['nama'];?>" required>
-                  </div>
-
-                  <div class="form-group">
-                    <label>NIP</label>
-                    <input type="text" class="form-control" name="nipK" value="<?= $ketua['nip'];?>" required>
-                  </div>
-                 
-                  <div class="form-group">
-                   
-                    <button type="submit" class="btn btn-block btn-primary"><i class="fa fa-save"></i> Simpan Perubahan </button>
-                  </div>
-                
-                </form>
-                </div>
-                <div class="col-md-6 text-center">
-                  <img src="<?= base_url();?>assets/dist/img/icon-pn.png" class="img-responsive img-thumbnail">
-                </div>
-                </div>
-              </div>
-              <!-- /.tab-pane -->
-
             </div>
             <!-- /.tab-content -->
           </div>

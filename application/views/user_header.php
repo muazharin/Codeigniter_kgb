@@ -103,9 +103,9 @@
               
               <!-- Menu Footer-->
               <li class="user-footer">
-               <!--  <div class="pull-left">
-                  <a href="setting.php" class="btn btn-default btn-flat">Pengaturan</a>
-                </div> -->
+                <div class="pull-left">
+                  <a href="<?= base_url();?>user/setting_user" class="btn btn-default btn-flat">Pengaturan</a>
+                </div>
                 <div class="pull-right">
                   <a href="<?= base_url();?>login/logout" onclick="return confirm('Apakah Anda yakin ingin keluar?')" class="btn btn-default btn-flat">Keluar</a>
                 </div>
@@ -149,21 +149,12 @@
             <i class="fa fa-user"></i> <span>Data Pegawai</span>
           </a>
         </li>
-
-        <!-- <li id="mn" class="treeview">
-          <a href="#">
-            <i class="fa fa-pencil"></i>
-            <span>Tulisan</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+        
+        <li id="mn3">
+          <a href="<?=base_url();?>user/setting_user">
+            <i class="fa fa-user"></i> <span>Pengaturan</span>
           </a>
-          <ul class="treeview-menu">
-            <li id="mn-"><a href="#"><i class="fa fa-circle-o"></i> Berita</a></li>
-            <li id="mn-"><a href="#"><i class="fa fa-circle-o"></i> Informasi</a></li>
-          </ul>
-        </li> -->
-
+        </li>
       </ul>
     </section>
     <!-- /.sidebar -->

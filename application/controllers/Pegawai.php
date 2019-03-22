@@ -124,6 +124,8 @@ class Pegawai extends CI_Controller {
 		}
 	}
 
+	
+
 	public function export(){
 
 		$data['pegawai']=$this->M_pegawai->getAllPegawai();

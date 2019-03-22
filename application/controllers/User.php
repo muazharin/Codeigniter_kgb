@@ -52,6 +52,24 @@ class User extends CI_Controller {
 			$this->session->set_flashdata('pegawai', 'Diubah');
 			redirect('user/data');
 		}
-    }
+	}
+	
+	public function setting_user(){
+		$data['client']=$this->M_user->dataClient();
+        $data['gaji']=$this->M_user->dataGaji();
+		// $data['ketua']=$this->M_pegawai->ketua();
+		$this->form_validation->set_rules('pb','Password Baru','required|xss_clean');
+		$this->form_validation->set_rules('kpb','Konfirmasi Password','required|xss_clean|matches[pb]');
+		if($this->form_validation->run()==FALSE){
+			$data['sidebar']="#mn3";
+			$this->load->view('user_header',$data);
+			$this->load->view('setting_user',$data);
+			$this->load->view('footer', $data);
+		}else{
+			$this->M_user->ubahPasswordUser();
+			$this->session->set_flashdata('pegawai', 'Diubah');
+			redirect('user/setting_user');
+		}
+	}
    
 }

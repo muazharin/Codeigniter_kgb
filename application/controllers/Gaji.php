@@ -25,10 +25,10 @@ class Gaji extends CI_Controller {
     public function tambah()
     {
         $data['gol']=[
-            'IV/A','IV/B','IV/C','IV/D','IV/E',
-            'III/A','III/B','III/C','III/D',
-            'II/A','II/B','II/C','II/D',
-            'I/A','I/B','I/C','I/D'
+            'IV/a','IV/b','IV/c','IV/d','IV/e',
+            'III/a','III/b','III/c','III/d',
+            'II/a','II/b','II/c','II/d',
+            'I/a','I/b','I/c','I/d'
         ];
         $this->form_validation->set_rules('gol', 'Golongan', 'required|xss_clean');
         $this->form_validation->set_rules('masa_kerja', 'Masa Kerja', 'required|xss_clean');
@@ -48,10 +48,10 @@ class Gaji extends CI_Controller {
 
     public function detailDataGaji($id){
         $data['gol']=[
-            'IV/A','IV/B','IV/C','IV/D','IV/E',
-            'III/A','III/B','III/C','III/D',
-            'II/A','II/B','II/C','II/D',
-            'I/A','I/B','I/C','I/D'
+            'IV/a','IV/b','IV/c','IV/d','IV/e',
+            'III/a','III/b','III/c','III/d',
+            'II/a','II/b','II/c','II/d',
+            'I/a','I/b','I/c','I/d'
         ];
         $this->form_validation->set_rules('gol', 'Golongan', 'required|xss_clean');
         $this->form_validation->set_rules('masa_kerja', 'Masa Kerja', 'required|xss_clean');

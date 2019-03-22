@@ -51,4 +51,14 @@ class M_user extends CI_Model {
         $this->db->update('user',$dataUser);
 
     }
+
+    public function ubahPasswordUser(){
+        $data=[
+            'username' => $this->session->userdata('username'),
+            'password' => md5($this->input->post('pb',true))
+        ];
+        $this->db->where('username', $this->session->userdata('username'));
+        $this->db->update('user',$data);
+    }
+
 }

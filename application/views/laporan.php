@@ -312,5 +312,5 @@
     </body>
     </html>';
     $pdf->writeHTML($html, true, false, true, false, '');
-    $pdf->Output('sk kenaikan pangkat.pdf', 'I');
+    $pdf->Output('SK_KGB_'.$nip.'_'.date("Y").'.pdf', 'I');
 ?>

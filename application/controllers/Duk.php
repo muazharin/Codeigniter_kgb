@@ -29,10 +29,10 @@ class Duk extends CI_Controller {
             'Juru Tingkat I','Juru','Juru Muda Tingkat I','Juru Muda'
         ];
         $data['gol']=[
-            'IV/A','IV/B','IV/C','IV/D','IV/E',
-            'III/A','III/B','III/C','III/D',
-            'II/A','II/B','II/C','II/D',
-            'I/A','I/B','I/C','I/D'
+            'IV/a','IV/b','IV/c','IV/d','IV/e',
+            'III/a','III/b','III/c','III/d',
+            'II/a','II/b','II/c','II/d',
+            'I/a','I/b','I/c','I/d'
         ];
         $this->form_validation->set_rules('nip','NIP','required|xss_clean|numeric');
         $this->form_validation->set_rules('nama','Nama','required|xss_clean');
@@ -103,6 +103,10 @@ class Duk extends CI_Controller {
 		$x=1;
 
 		foreach($data['duk'] as $p){
+			$tgl = explode('-', $p['naik_gaji_yad']);
+			$thn = $tgl[0] - 2;
+			$today = date('Y');
+			$y = $today - $thn;
 			$objPhpExcel->getActiveSheet()->setCellValue('A'.$baris, $x);
 			$objPhpExcel->getActiveSheet()->setCellValue('B'.$baris, $p['nip']);
 			$objPhpExcel->getActiveSheet()->setCellValue('C'.$baris, $p['nama']);
@@ -113,7 +117,7 @@ class Duk extends CI_Controller {
 			$objPhpExcel->getActiveSheet()->setCellValue('H'.$baris, $p['tmt_jabatan']);
 			$objPhpExcel->getActiveSheet()->setCellValue('I'.$baris, $p['masa_kerja_golongan_tahun']);
 			$objPhpExcel->getActiveSheet()->setCellValue('J'.$baris, $p['masa_kerja_golongan_bulan']);
-			$objPhpExcel->getActiveSheet()->setCellValue('K'.$baris, $p['masa_kerja_seluruh_tahun']);
+			$objPhpExcel->getActiveSheet()->setCellValue('K'.$baris, $p['masa_kerja_seluruh_tahun']+$y);
 			$objPhpExcel->getActiveSheet()->setCellValue('L'.$baris, $p['masa_kerja_seluruh_bulan']);
 			$objPhpExcel->getActiveSheet()->setCellValue('M'.$baris, $p['naik_pangkat_yad']);
 			$objPhpExcel->getActiveSheet()->setCellValue('N'.$baris, $p['naik_gaji_yad']);
