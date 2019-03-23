@@ -84,6 +84,13 @@ class Laporan extends CI_Controller {
         }
     }
 
+    public function cek($id){
+        $data['sidebar']="#mn1";
+        $this->load->view('header');
+        $this->load->view('cek',$data);
+        $this->load->view('footer', $data);
+    }
+
     public function print($id){
         $this->load->library('Pdf');
         $this->load->view('laporan2');

@@ -154,7 +154,7 @@
                         <td><?= mediumdate_indo($d['naik_pangkat_yad']);?></td>
                         <td style="text-align: center;">
                           <a href="<?= base_url();?>data_duk/<?= $d['id_duk'];?>" class="btn btn-info"><i class="fa fa-eye"></i></a>
-                          <a href="<?= base_url(); ?>laporan/print/<?= $d['id_duk']?> " class="btn btn-success"><i class="fa fa-print"></i></a>
+                          <a href="<?= base_url(); ?>laporan/cek/<?= $d['id_duk']?> " class="btn btn-success"><i class="fa fa-print"></i></a>
                         </td>
                       </tr>
                     <?php $i++;?>
