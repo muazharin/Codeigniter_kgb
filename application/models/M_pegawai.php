@@ -38,6 +38,11 @@ class M_Pegawai extends CI_Model {
         ];
         $this->db->insert('user',$dataUser);
 
+        $dataSK = [
+            'nip'=>$this->input->post('nip')
+        ];
+        $this->db->insert('sk',$dataSK);
+
     }
 
     public function hapusDataPegawai($nip){
@@ -47,6 +52,8 @@ class M_Pegawai extends CI_Model {
         $this->db->delete('user');
         $this->db->where('nip', $nip);
         $this->db->delete('duk');
+        $this->db->where('nip', $nip);
+        $this->db->delete('sk');
     }
 
     public function getPegawaiById($id){

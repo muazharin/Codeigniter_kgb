@@ -56,8 +56,8 @@
                     <td><?= $d['pangkat'];?></td>
                     <td><?= $d['golongan'];?></td>
                     <td><?= $d['jabatan'];?></td>
-                    <td><?= $d['naik_pangkat_yad'];?></td>
-                    <td><?= $d['naik_gaji_yad'];?></td>
+                    <td><?= mediumdate_indo($d['naik_pangkat_yad']);?></td>
+                    <td><?= mediumdate_indo($d['naik_gaji_yad']);?></td>
                     <td>
                        <a href="<?= base_url(); ?>data_duk/<?= $d['id_duk']?>" class="btn btn-info"><i class="fa fa-eye"></i></a>
                     </td>

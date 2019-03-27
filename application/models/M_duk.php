@@ -65,5 +65,32 @@ class M_duk extends CI_Model {
         ];
         $this->db->where('id_duk',$id);
         $this->db->update('duk',$data);
+        
+        $this->db->where('id_duk',$id);
+        $this->db->set('masa_kerja_seluruh_tahun','masa_kerja_seluruh_tahun+2',FALSE);
+        $this->db->update('duk');
+    }
+
+    public function getNoSK($nip){
+       $this->db->select('no_sk_kgb');
+       $this->db->where('nip',$nip);
+       $query = $this->db->get('sk');
+       return $query->row_array();
+    }
+
+    public function updateDataPangkat($id){
+        $t=date('Y-m-d', strtotime('+4 year', strtotime($this->input->post('tmt_pangkat_baru'))));
+        $data=[
+            'tmt_pangkat' => $this->input->post('tmt_pangkat_baru',true),
+            'golongan' => $this->input->post('golonganbaru',true),
+            'naik_pangkat_yad' => $t
+        ];
+        $this->db->where('id_duk',$id);
+        $this->db->update('duk',$data);
+
+        // $t=date('Y-m-d', strtotime('+4 year', strtotime($this->input->post(''))));
+        // $this->db->where('id_duk',$id);
+        // $this->db->set('masa_kerja_seluruh_tahun','masa_kerja_seluruh_tahun+2',FALSE);
+        // $this->db->update('duk');
     }
 }

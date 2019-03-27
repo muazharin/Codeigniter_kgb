@@ -139,7 +139,7 @@
                 <tr>
                     <td width="80px">Memperhatikan</td>
                     <td width="7px">:</td>
-                    <td width="415px" colspan="2">Persetujuan Teknis Kepala Badan Kepegawaian Negara Nomor <b>AI-13001002228</b> Tanggal <b>27 Februari 2015.</b></td>
+                    <td width="415px" colspan="2">Persetujuan Teknis Kepala Badan Kepegawaian Negara Nomor <b>'.$no.'</b> Tanggal <b>'.date_indo($tglpersetujuan).'.</b></td>
                 </tr>
 
                 </table>
@@ -170,7 +170,7 @@
                     <td width="12px;">1.</td>
                     <td width="150px">Nama</td>
                     <td width="7px">:</td>
-                    <td width="230px">TAHIR, S.H.</td>
+                    <td width="230px">'.$nama.'</td>
                 </tr>
 
                 <tr>
@@ -179,7 +179,7 @@
                     <td width="12px;">2.</td>
                     <td width="150px">Tempat Tanggal Lahir</td>
                     <td width="7px">:</td>
-                    <td width="230px">Bontocinde, 2 Mei 1977</td>
+                    <td width="230px">'.$tempat_lahir.', '.date_indo($tgl_lahir).'</td>
                 </tr>
 
                 <tr>
@@ -188,7 +188,7 @@
                     <td width="12px;">3.</td>
                     <td width="150px">Nomor Induk Pegawai (N.I.P)</td>
                     <td width="7px">:</td>
-                    <td width="230px">21347979234324</td>
+                    <td width="230px">'.$nip.'</td>
                 </tr>
 
                 <tr>
@@ -197,7 +197,7 @@
                     <td width="12px;">4.</td>
                     <td width="150px">Pendidikan</td>
                     <td width="7px">:</td>
-                    <td width="230px">S.H. Tahun 2001</td>
+                    <td width="230px">'.$pendidikan.'</td>
                 </tr>
 
                 <tr>
@@ -206,7 +206,7 @@
                     <td width="12px;">5.</td>
                     <td width="150px">Pangkat lama/Golongan Ruang</td>
                     <td width="7px">:</td>
-                    <td width="230px">Penata (III/c)</td>
+                    <td width="230px">'.$pangkat.' ('.$golongan.')</td>
                 </tr>
 
                 <tr>
@@ -215,7 +215,7 @@
                     <td width="12px;"></td>
                     <td width="150px">Terhitung mulai tanggal</td>
                     <td width="7px">:</td>
-                    <td width="230px">1 April 2011</td>
+                    <td width="230px">'.date_indo($tmt_pangkat).'</td>
                 </tr>
 
                 <tr>
@@ -224,7 +224,7 @@
                     <td width="12px;">6.</td>
                     <td width="150px">Jabatan</td>
                     <td width="7px">:</td>
-                    <td width="230px">Hakim Pratama Madya</td>
+                    <td width="230px">'.$jabatan.'</td>
                 </tr>
 
                  <tr>
@@ -243,13 +243,13 @@
                  <tr>
                     <td width="80px"></td>
                     <td width="7px"></td>
-                    <td width="415px" colspan="4">terhitung mulai tanggal <b>1 April 2015</b> dinaikkan pangkatnya menjadi <b>Penata Tk. I</b> golongan ruang <b>III/d</b> dalam jabatan Hakim Pratama Utama <b>Pengadilan Negeri Kendari</b> dengan masa kerja golongan <b>12 tahun 4 bulan</b>, dan kepadanya diberikan gaji pokok sebesar <b>Rp. 3.160.900,-</b> ditambah dengan penghasilan lainnya yang sah berdasarkan peraturan perundangan-undangan yang berlaku.</td>
+                    <td width="415px" colspan="4">terhitung mulai tanggal <b>'.date_indo($tmt_pangkat_baru).'</b> dinaikkan pangkatnya menjadi <b>'.$pangkatbaru.'</b> golongan ruang <b>'.$golonganbaru.'</b> dalam jabatan '.$jabatan.' <b>Pengadilan Negeri Kendari</b> dengan masa kerja golongan <b>'.$mkgt.' tahun '.$mkgb.' bulan</b>, dan kepadanya diberikan gaji pokok sebesar <b>Rp. '.nominal($gaji).',- ('.$gajiterbilang.')</b> ditambah dengan penghasilan lainnya yang sah berdasarkan peraturan perundangan-undangan yang berlaku.</td>
                 </tr>
                 
                 <tr>
                     <td width="80px">KEDUA</td>
                     <td width="7px">:</td>
-                    <td width="415px" colspan="4">Kepadanya diberikan tunjangan <b>Hakim Pratama Utama</b> Pengadilan Negeri Klas I.B berdasarkan Peraturan Pemerintahan Nomor 94 Tahun 2012 sebesar <b>Rp. 12.300.000,-</b> setiap bulan.</td>
+                    <td width="415px" colspan="4">Kepadanya diberikan tunjangan <b>'.$jabatan.'</b> Pengadilan Negeri Klas I.A berdasarkan Peraturan Pemerintahan Nomor 94 Tahun 2012 sebesar <b>Rp. '.nominal($tunjangan).',- ('.$tunjanganbaru.')</b> setiap bulan.</td>
                 </tr>
 
                 <tr>
@@ -302,7 +302,7 @@
 
                 <tr>
                     <td ></td>
-                    <td style="text-align: center">pada tanggal <b>9 Juni 2015</b></td>
+                    <td style="text-align: center">pada tanggal <b>'.date_indo(date('Y-m-d')).'</b></td>
                 </tr>
 
                 <tr>
@@ -334,7 +334,7 @@
 
                 <tr>
                     <td></td>
-                    <td style="text-align: center"><b>HERRI SWANTORO</b></td>
+                    <td style="text-align: center"><b>'.$direkturjendral.'</b></td>
                 </tr>
 
                 <tr>
@@ -370,7 +370,7 @@
 
                 <tr>
                     <td></td>
-                    <td style="text-align: center"><b>H,R.M, ANTON SUJATNO</b></td>
+                    <td style="text-align: center"><b>'.$direkturpembina.'</b></td>
                 </tr>
             </table>
 

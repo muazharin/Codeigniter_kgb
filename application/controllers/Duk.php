@@ -103,10 +103,10 @@ class Duk extends CI_Controller {
 		$x=1;
 
 		foreach($data['duk'] as $p){
-			$tgl = explode('-', $p['naik_gaji_yad']);
-			$thn = $tgl[0] - 2;
-			$today = date('Y');
-			$y = $today - $thn;
+			// $tgl = explode('-', $p['naik_gaji_yad']);
+			// $thn = $tgl[0] - 2;
+			// $today = date('Y');
+			// $y = $today - $thn;
 			$objPhpExcel->getActiveSheet()->setCellValue('A'.$baris, $x);
 			$objPhpExcel->getActiveSheet()->setCellValue('B'.$baris, $p['nip']);
 			$objPhpExcel->getActiveSheet()->setCellValue('C'.$baris, $p['nama']);
@@ -117,7 +117,7 @@ class Duk extends CI_Controller {
 			$objPhpExcel->getActiveSheet()->setCellValue('H'.$baris, $p['tmt_jabatan']);
 			$objPhpExcel->getActiveSheet()->setCellValue('I'.$baris, $p['masa_kerja_golongan_tahun']);
 			$objPhpExcel->getActiveSheet()->setCellValue('J'.$baris, $p['masa_kerja_golongan_bulan']);
-			$objPhpExcel->getActiveSheet()->setCellValue('K'.$baris, $p['masa_kerja_seluruh_tahun']+$y);
+			$objPhpExcel->getActiveSheet()->setCellValue('K'.$baris, $p['masa_kerja_seluruh_tahun']);
 			$objPhpExcel->getActiveSheet()->setCellValue('L'.$baris, $p['masa_kerja_seluruh_bulan']);
 			$objPhpExcel->getActiveSheet()->setCellValue('M'.$baris, $p['naik_pangkat_yad']);
 			$objPhpExcel->getActiveSheet()->setCellValue('N'.$baris, $p['naik_gaji_yad']);

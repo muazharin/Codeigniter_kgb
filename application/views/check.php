@@ -39,7 +39,7 @@
                   <div class="form-group">
                     <label class="col-md-3 control-label">NIP</label>
                     <div class="col-md-9">
-                      <input type="text" name="nip" value="<?= $duk['nip'];?>" class="form-control" required>
+                      <input type="text" name="nip" readonly value="<?= $duk['nip'];?>" class="form-control" required>
                     </div>
                   </div>
 
@@ -120,7 +120,7 @@
                   <div class="form-group">
                     <label class="col-md-3 control-label">Nomor SK Sebelumnya</label>
                     <div class="col-md-9">
-                      <input type="text" name="no2" class="form-control" required>
+                      <input type="text" value="<?= $nosk['no_sk_kgb'];?>" name="no2" class="form-control" required>
                     </div>
                   </div>
                   
