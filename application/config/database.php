@@ -74,12 +74,12 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
-	'dsn'	=> 'pgsql:host=localhost;port=3306;dbname=kgb',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
+	'dsn'	=> '',
+	'hostname' => 'kgb.database.windows.net',
+	'username' => 'muaz',
+	'password' => '9611Zharin',
 	'database' => 'kgb',
-	'dbdriver' => 'mysqli',
+	'dbdriver' => 'pdo',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
