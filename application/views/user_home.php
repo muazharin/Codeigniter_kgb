@@ -12,7 +12,14 @@
         <!-- <li class="active">Dashboard</li> -->
       </ol>
     </section>
-
+    <?php
+      $jk1='';
+      if($pegawai['jenis_kelamin']=='Laki-laki'){
+        $jk1='pria';
+      }else{
+        $jk1='wanita';
+      }
+    ?>
     <!-- Main content -->
     <section class="content" style="min-height: 600px;">
       <!-- Small boxes (Stat box) -->
@@ -26,7 +33,7 @@
               <center><h3 class="widget-user-username" style="margin-top: -15px;"><?= $client['nama'];?></h3></center>
             </div>
             <div class="widget-user-image">
-              <img class="img-circle" src="<?= base_url() ?>assets/dist/img/pria.jpg" alt="User Avatar">
+              <img class="img-circle" src="<?= base_url() ?>assets/dist/img/<?= $jk1?>.jpg" alt="User Avatar">
             </div>
             <div class="box-footer">
               <div class="row">

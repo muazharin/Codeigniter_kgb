@@ -81,18 +81,25 @@
       <div class="navbar-custom-menu">
 
         <ul class="nav navbar-nav">
-
+          <?php
+            $jk1='';
+            if($pegawai['jenis_kelamin']=='Laki-laki'){
+              $jk1='pria';
+            }else{
+              $jk1='wanita';
+            }
+          ?>
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="<?= base_url();?>assets/dist/img/pria.jpg" class="user-image" alt=".">
+              <img src="<?= base_url();?>assets/dist/img/<?= $jk1?>.jpg" class="user-image" alt=".">
               <span class="hidden-xs"><?= $client['nama'];?></span>
             </a>
             <ul class="dropdown-menu">
 
               <!-- User image -->
               <li class="user-header">
-                <img src="<?= base_url();?>assets/dist/img/pria.jpg" class="img-circle" alt="User Image">
+                <img src="<?= base_url();?>assets/dist/img/<?= $jk1?>.jpg" class="img-circle" alt="User Image">
 
                 <p>
                   <?= $client['nama'];?>
@@ -124,7 +131,7 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="<?= base_url();?>assets/dist/img/pria.jpg" class="img-circle" alt="User Image">
+          <img src="<?= base_url();?>assets/dist/img/<?= $jk1?>.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p><?= $client['nip'];?></p>
@@ -152,7 +159,7 @@
         
         <li id="mn3">
           <a href="<?=base_url();?>user/setting_user">
-            <i class="fa fa-user"></i> <span>Pengaturan</span>
+            <i class="fa fa-cogs"></i> <span>Pengaturan</span>
           </a>
         </li>
       </ul>

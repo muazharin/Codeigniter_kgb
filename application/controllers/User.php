@@ -14,8 +14,10 @@ class User extends CI_Controller {
 	
 	public function index()
 	{
+		$id=$this->session->userdata('username');
         $data['client']=$this->M_user->dataClient();
-        $data['gaji']=$this->M_user->dataGaji();
+		$data['gaji']=$this->M_user->dataGaji();
+		$data['pegawai']=$this->M_user->getPegawaiById($id);
         $data['sidebar']="#mn1";
         $this->load->view('user_header',$data);
         $this->load->view('user_home',$data);
@@ -55,8 +57,10 @@ class User extends CI_Controller {
 	}
 	
 	public function setting_user(){
+		$id=$this->session->userdata('username');
 		$data['client']=$this->M_user->dataClient();
-        $data['gaji']=$this->M_user->dataGaji();
+		$data['gaji']=$this->M_user->dataGaji();
+		$data['pegawai']=$this->M_user->getPegawaiById($id);
 		// $data['ketua']=$this->M_pegawai->ketua();
 		$this->form_validation->set_rules('pb','Password Baru','required|xss_clean');
 		$this->form_validation->set_rules('kpb','Konfirmasi Password','required|xss_clean|matches[pb]');
