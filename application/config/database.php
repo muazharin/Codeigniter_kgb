@@ -75,7 +75,7 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'tcp:kgb.database.windows.net',
+	'hostname' => 'kgb.database.windows.net',
 	'username' => 'muaz',
 	'password' => '9611Zharin',
 	'database' => 'kgb',
