@@ -252,7 +252,7 @@
                 </tr>
                 <tr>
                     <td width="250px" style="text-align:center;"></td>
-                    <td width="250px" style="text-align:center;">KETUA PENGADILAN NEGERI KENDARI</td>
+                    <td width="250px" style="text-align:center;">'.$ttd1.'</td>
                 </tr>
                 
             </table>
@@ -262,11 +262,11 @@
             <table style="width:600px;" border="0">
                 <tr>
                     <td width="250px" style="text-align:center;"><b><u></u></b></td>
-                    <td width="250px" style="text-align:center;"><b><u>'.$ketua['nama'].'</u></b></td>
+                    <td width="250px" style="text-align:center;"><b><u>'.$ttd2.'</u></b></td>
                 </tr>
                 <tr>
                     <td width="250px" style="text-align:center;"></td>
-                    <td width="250px" style="text-align:center;">NIP. '.$nipketua['nip'].'</td>
+                    <td width="250px" style="text-align:center;">NIP. '.$ttd3.'</td>
                 </tr>
             </table>
     

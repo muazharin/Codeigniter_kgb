@@ -30,6 +30,8 @@ class Laporan extends CI_Controller {
         $data['duk']=$this->M_duk->getDataDukById($id);
         $data['gaji']=$this->M_duk->dataGaji($id,$nip);
         $data['gaji_baru']=$this->M_duk->dataGajiBaru($id,$nip);
+        $data['ketua']=$this->M_duk->getKetua();
+        $data['nipketua']=$this->M_duk->getNipKetua();
         $this->form_validation->set_rules('no1','Nomor','xss_clean|required');
         $this->form_validation->set_rules('nip','NIP','xss_clean|required|numeric|max_length[18]');
         $this->form_validation->set_rules('nama','Nama','xss_clean|required');
@@ -75,10 +77,12 @@ class Laporan extends CI_Controller {
                 'mkgb2'=>$this->input->post('mkgb2',true),
                 'golongan2'=>$this->input->post('golongan2',true),
                 'tmt_gaji2'=>$this->input->post('tmt_gaji2',true),
-                'tmt_gaji3'=>$this->input->post('tmt_gaji3',true)
+                'tmt_gaji3'=>$this->input->post('tmt_gaji3',true),
+                'ttd1'=>$this->input->post('ttd1',true),
+                'ttd2'=>$this->input->post('ttd2',true),
+                'ttd3'=>$this->input->post('ttd3',true),
+                
             ];
-            $data['ketua']=$this->M_duk->getKetua();
-            $data['nipketua']=$this->M_duk->getNipKetua();
             $this->M_duk->updateDataKGB($this->input->post('id'));
             $this->load->library('Pdf');
             $this->load->view('laporan',$data);

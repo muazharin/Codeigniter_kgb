@@ -211,6 +211,32 @@
                   </div>
 
                   <div class="form-group">
+                  </div>
+                  <div class="form-group">
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-md-3 control-label">Yang Bertandatangan</label>
+                    <div class="col-md-9">
+                      <input type="text" value="KETUA PENGADILAN NEGERI KENDARI" name="ttd1" class="form-control" required>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label class="col-md-3 control-label">Nama</label>
+                    <div class="col-md-9">
+                      <input type="text" value="<?= $ketua['nama'];?>" name="ttd2" class="form-control" required>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label class="col-md-3 control-label">NIP</label>
+                    <div class="col-md-9">
+                      <input type="text" value="<?= $nipketua['nip'];?>" name="ttd3" class="form-control" required>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
                     <!-- <div class="col-md-2"></div> -->
                     <div class="col-md-12">
                       <!-- <a onclick="return confirm('Pastikan data sudah benar sebelum dicetak.\nKlik Ok jika data sudah benar')" class="btn btn-success" href="<?= base_url(); ?>laporan/print/<?= $duk['id_duk']?>" style="float: right;"> <i class="fa fa-print"></i> Cetak</a> -->
