@@ -59,6 +59,7 @@ class Laporan extends CI_Controller {
             $this->load->view('footer', $data);
         }else{
             $data=[
+                'tgl1'=>$this->input->post('tgl1',true),
                 'no1'=>$this->input->post('no1',true),
                 'nip'=>$this->input->post('nip',true),
                 'nama'=>$this->input->post('nama',true),

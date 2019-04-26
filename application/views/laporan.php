@@ -45,8 +45,9 @@
     
             <table border="0" width="100%">
             <tr>
-                <td colspan="4" style="text-align: right"> Kendari, '.date_indo($date).'</td>
+                <td colspan="4" style="text-align: right"> Kendari, '.date_indo($tgl1).'</td>
             </tr>
+            
             <tr>
                 <td width="60px">Nomor</td>
                 <td width="7px">:</td>

@@ -31,6 +31,22 @@
               <form class="form-horizontal" method="post" action="">
                   <input type="hidden" name="id" value="<?= $duk['id_duk'];?>">
                   <div class="form-group">
+                    <label class="col-md-3 control-label">Terhitung Mulai Tanggal</label>
+                    <div class="col-md-9">
+                      <div class="input-group date">
+                        <div class="input-group-addon">
+                          <i class="fa fa-calendar"></i>
+                        </div>
+                        <?php $date = date('Y-m-d');?>
+                        <input type="text" value="<?=$date;?>" name="tgl1" class="form-control pull-right" id="datepicker3" required="">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                  </div>
+                  <div class="form-group">
+                  </div>
+                  <div class="form-group">
                     <label class="col-md-3 control-label">Nomor SK</label>
                     <div class="col-md-9">
                       <input type="text" name="no1" class="form-control" required>
